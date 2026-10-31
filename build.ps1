@@ -1,0 +1,320 @@
+function Get-Luminance($hex) {
+    $hex = $hex.TrimStart('#')
+    $r = [Convert]::ToInt32($hex.Substring(0,2),16)
+    $g = [Convert]::ToInt32($hex.Substring(2,2),16)
+    $b = [Convert]::ToInt32($hex.Substring(4,2),16)
+    return (0.299*$r + 0.587*$g + 0.114*$b)
+}
+
+function Get-FG($hex) {
+    if ([string]::IsNullOrEmpty($hex)) { return '#000' }
+    $lum = Get-Luminance $hex
+    if ($lum -lt 140) { return '#fff' } else { return '#111' }
+}
+
+# --- Color-contrast helpers (WCAG-style relative luminance) ---
+
+function Hex-ToRgb($hex) {
+    $hex = $hex.TrimStart('#')
+    return @(
+        [Convert]::ToInt32($hex.Substring(0,2),16),
+        [Convert]::ToInt32($hex.Substring(2,2),16),
+        [Convert]::ToInt32($hex.Substring(4,2),16)
+    )
+}
+
+function Rgb-ToHex($r,$g,$b) {
+    $r = [Math]::Max(0,[Math]::Min(255,[Math]::Round($r)))
+    $g = [Math]::Max(0,[Math]::Min(255,[Math]::Round($g)))
+    $b = [Math]::Max(0,[Math]::Min(255,[Math]::Round($b)))
+    return ('#{0:X2}{1:X2}{2:X2}' -f [int]$r,[int]$g,[int]$b)
+}
+
+function Get-RelLuminance($hex) {
+    $rgb = Hex-ToRgb $hex
+    $channels = $rgb | ForEach-Object {
+        $c = $_ / 255.0
+        if ($c -le 0.03928) { $c / 12.92 } else { [Math]::Pow((($c + 0.055) / 1.055), 2.4) }
+    }
+    return (0.2126*$channels[0] + 0.7152*$channels[1] + 0.0722*$channels[2])
+}
+
+function Get-ContrastRatio($hex1, $hex2) {
+    $l1 = Get-RelLuminance $hex1
+    $l2 = Get-RelLuminance $hex2
+    $lighter = [Math]::Max($l1,$l2)
+    $darker = [Math]::Min($l1,$l2)
+    return ($lighter + 0.05) / ($darker + 0.05)
+}
+
+function Rgb-ToHsl($r,$g,$b) {
+    $r = $r/255.0; $g = $g/255.0; $b = $b/255.0
+    $max = [Math]::Max($r,[Math]::Max($g,$b))
+    $min = [Math]::Min($r,[Math]::Min($g,$b))
+    $h = 0; $s = 0; $l = ($max+$min)/2
+    if ($max -ne $min) {
+        $d = $max - $min
+        $s = if ($l -gt 0.5) { $d / (2 - $max - $min) } else { $d / ($max + $min) }
+        switch ($max) {
+            $r { $h = (($g - $b) / $d) + $(if ($g -lt $b) { 6 } else { 0 }) }
+            $g { $h = (($b - $r) / $d) + 2 }
+            $b { $h = (($r - $g) / $d) + 4 }
+        }
+        $h = $h / 6
+    }
+    return @($h,$s,$l)
+}
+
+function Hue-ToRgb($p,$q,$t) {
+    if ($t -lt 0) { $t += 1 }
+    if ($t -gt 1) { $t -= 1 }
+    if ($t -lt (1/6)) { return $p + ($q - $p) * 6 * $t }
+    if ($t -lt (1/2)) { return $q }
+    if ($t -lt (2/3)) { return $p + ($q - $p) * (2/3 - $t) * 6 }
+    return $p
+}
+
+function Hsl-ToRgb($h,$s,$l) {
+    if ($s -eq 0) {
+        $v = $l * 255
+        return @($v,$v,$v)
+    }
+    $q = if ($l -lt 0.5) { $l * (1 + $s) } else { $l + $s - $l * $s }
+    $p = 2 * $l - $q
+    $r = Hue-ToRgb $p $q ($h + 1/3)
+    $g = Hue-ToRgb $p $q $h
+    $b = Hue-ToRgb $p $q ($h - 1/3)
+    return @(($r*255), ($g*255), ($b*255))
+}
+
+function Set-Lightness($hex, $newL) {
+    $rgb = Hex-ToRgb $hex
+    $hsl = Rgb-ToHsl $rgb[0] $rgb[1] $rgb[2]
+    $rgbOut = Hsl-ToRgb $hsl[0] $hsl[1] $newL
+    return Rgb-ToHex $rgbOut[0] $rgbOut[1] $rgbOut[2]
+}
+
+# Ensures $textHex is legible against $bgHex. If contrast is already
+# decent, returns the original color unchanged (preserves team color).
+# Otherwise nudges the text color's lightness (same hue/saturation) toward
+# white or black -- whichever direction improves contrast more -- until it
+# clears the minimum contrast ratio, so the team's color identity is kept
+# but the text stays readable.
+function Get-LegibleColor($textHex, $bgHex, $minRatio) {
+    $ratio = Get-ContrastRatio $textHex $bgHex
+    if ($ratio -ge $minRatio) { return $textHex }
+
+    $bestHex = $textHex
+    $bestRatio = $ratio
+    foreach ($l in @(0.90,0.95,0.98,0.10,0.05,0.02)) {
+        $candidate = Set-Lightness $textHex $l
+        $r = Get-ContrastRatio $candidate $bgHex
+        if ($r -gt $bestRatio) {
+            $bestRatio = $r
+            $bestHex = $candidate
+        }
+        if ($bestRatio -ge $minRatio) { break }
+    }
+    return $bestHex
+}
+
+function Parse-File($path) {
+    $data = @{}
+    Get-Content -LiteralPath $path | ForEach-Object {
+        $line = $_.Trim()
+        if ($line -eq '') { return }
+        $parts = $line -split '\|'
+        $year = [int]$parts[0]
+        $data[$year] = $parts[1..($parts.Length-1)]
+    }
+    return $data
+}
+
+function Parse-Secondary($path) {
+    $data = @{}
+    Get-Content -LiteralPath $path | ForEach-Object {
+        $line = $_.Trim()
+        if ($line -eq '') { return }
+        $parts = $line -split '\|'
+        $data[$parts[0]] = $parts[1]
+    }
+    return $data
+}
+
+function Get-Secondary($name, $league, $secondary) {
+    if ($league -eq 'nfl' -and $name -eq 'New York Giants') {
+        return $secondary['New York Giants (NFL)']
+    }
+    if ($secondary.ContainsKey($name)) {
+        return $secondary[$name]
+    }
+    return '#888888'
+}
+
+function Format-NflRecord($rec) {
+    $parts = $rec -split '-'
+    if ($parts.Count -eq 3 -and [int]$parts[2] -eq 0) {
+        return "$($parts[0])-$($parts[1])"
+    }
+    return $rec
+}
+
+function To-Roman($num) {
+    $pairs = @(
+        @(1000,'M'), @(900,'CM'), @(500,'D'), @(400,'CD'), @(100,'C'), @(90,'XC'),
+        @(50,'L'), @(40,'XL'), @(10,'X'), @(9,'IX'), @(5,'V'), @(4,'IV'), @(1,'I')
+    )
+    $result = ''
+    foreach ($pair in $pairs) {
+        $value = $pair[0]
+        $numeral = $pair[1]
+        while ($num -ge $value) {
+            $result += $numeral
+            $num -= $value
+        }
+    }
+    return $result
+}
+
+# Franchise alias groups: maps a historical/relocated team name to a single
+# canonical key so cumulative championship counts follow the franchise, not
+# the display name (e.g. Brooklyn Dodgers + LA Dodgers count together).
+$aliases = @{
+    'mlb' = @{
+        'Brooklyn Dodgers'='Dodgers'; 'Brooklyn Robins'='Dodgers'; 'Los Angeles Dodgers'='Dodgers'
+        'Boston Braves'='Braves'; 'Milwaukee Braves'='Braves'; 'Atlanta Braves'='Braves'
+        'Philadelphia Athletics'='Athletics'; 'Oakland Athletics'='Athletics'
+        'New York Giants'='SF/NY Giants'; 'San Francisco Giants'='SF/NY Giants'
+        'St. Louis Browns'='Orioles'; 'Baltimore Orioles'='Orioles'
+        'Washington Senators'='Twins'; 'Minnesota Twins'='Twins'
+        'Boston Americans'='Red Sox'; 'Boston Red Sox'='Red Sox'
+    }
+    'nfl' = @{
+        'Decatur Staleys'='Bears'; 'Chicago Staleys'='Bears'; 'Chicago Bears'='Bears'
+        'Chicago Cardinals'='Cardinals'; 'Arizona Cardinals'='Cardinals'
+        'Baltimore Colts'='Colts'; 'Indianapolis Colts'='Colts'
+        'Cleveland Rams'='Rams'; 'Los Angeles Rams'='Rams'; 'St. Louis Rams'='Rams'
+        'Portsmouth Spartans'='Lions'; 'Detroit Lions'='Lions'
+        'Oakland Raiders'='Raiders'; 'Los Angeles Raiders'='Raiders'
+        'Boston Redskins'='Redskins'; 'Washington Redskins'='Redskins'
+    }
+    'nhl' = @{
+        'Toronto Arenas'='Maple Leafs'; 'Toronto St. Patricks'='Maple Leafs'; 'Toronto Maple Leafs'='Maple Leafs'
+        'Chicago Black Hawks'='Blackhawks'; 'Chicago Blackhawks'='Blackhawks'
+        'Mighty Ducks of Anaheim'='Ducks'; 'Anaheim Ducks'='Ducks'
+        'Minnesota North Stars'='Stars'; 'Dallas Stars'='Stars'
+    }
+    'nba' = @{
+        'Minneapolis Lakers'='Lakers'; 'Los Angeles Lakers'='Lakers'
+        'Fort Wayne Pistons'='Pistons'; 'Detroit Pistons'='Pistons'
+        'Philadelphia Warriors'='Warriors'; 'San Francisco Warriors'='Warriors'; 'Golden State Warriors'='Warriors'
+        'Syracuse Nationals'='76ers'; 'Philadelphia 76ers'='76ers'
+    }
+}
+
+function Get-Canonical($name, $league, $aliases) {
+    if ($aliases[$league].ContainsKey($name)) { return $aliases[$league][$name] }
+    return $name
+}
+
+$mlb = Parse-File 'mlb.txt'
+$nfl = Parse-File 'nfl.txt'
+$nhl = Parse-File 'nhl.txt'
+$nba = Parse-File 'nba.txt'
+$secondary = Parse-Secondary 'secondary.txt'
+
+$allYears = @{}
+foreach ($d in @($mlb,$nfl,$nhl,$nba)) { foreach ($k in $d.Keys) { $allYears[$k] = $true } }
+$years = $allYears.Keys | Sort-Object -Descending
+$yearsAscending = $allYears.Keys | Sort-Object
+
+# Pre-compute cumulative championship counts per franchise, per league, keyed
+# by "league|year" -> count (count already includes that year's title).
+$cumulative = @{}
+foreach ($leagueName in @('mlb','nfl','nhl','nba')) {
+    $data = switch ($leagueName) { 'mlb'{$mlb} 'nfl'{$nfl} 'nhl'{$nhl} 'nba'{$nba} }
+    $counts = @{}
+    foreach ($y in $yearsAscending) {
+        if (-not $data.ContainsKey($y)) { continue }
+        $champ = $data[$y][0]
+        if ($champ -like 'NO *') { continue }
+        $canon = Get-Canonical $champ $leagueName $aliases
+        if (-not $counts.ContainsKey($canon)) { $counts[$canon] = 0 }
+        $counts[$canon] += 1
+        $cumulative["$leagueName|$y"] = $counts[$canon]
+    }
+}
+
+function Build-Cell($parts, $league, $secondary, $year, $cumulative) {
+    if ($null -eq $parts) { return '<td class="empty"></td>' }
+    $champ = $parts[0]
+    if ($champ -like 'NO *') {
+        return "<td class=`"empty noevent`">$champ</td>"
+    }
+    $champRec = $parts[1]; $champGames = $parts[2]; $runner = $parts[3]
+    $runnerRec = $parts[4]; $runnerGames = $parts[5]
+    $champColor = $parts[6]; $runnerColor = $parts[7]
+
+    $champFg = Get-FG $champColor
+    $runnerFg = Get-FG $runnerColor
+    $champSecondary = Get-Secondary $champ $league $secondary
+    $runnerSecondary = Get-Secondary $runner $league $secondary
+    $champCount = $cumulative["$league|$year"]
+    $champNameColor = Get-LegibleColor $champSecondary $champColor 4.5
+    # Outline must be the opposite tone of the final text color, not a fixed
+    # dark shadow -- otherwise dark text (e.g. black, navy) ends up with a
+    # dark outline too, and the letters blur into an indistinct blob.
+    $outlineTone = Get-FG $champNameColor
+    if ($outlineTone -eq '#fff') {
+        $champOutline = '0 0 2px rgba(255,255,255,0.9), 0 0 2px rgba(255,255,255,0.9), 1px 1px 1px rgba(255,255,255,0.7), -1px -1px 1px rgba(255,255,255,0.7)'
+    } else {
+        $champOutline = '0 0 2px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.75), 1px 1px 1px rgba(0,0,0,0.6), -1px -1px 1px rgba(0,0,0,0.6)'
+    }
+
+    $champLine = $champRec
+    $runnerLine = $runnerRec
+    if ($league -eq 'nfl') {
+        $champLine = Format-NflRecord $champRec
+        $runnerLine = Format-NflRecord $runnerRec
+    }
+
+    $scoreLabel = "$champGames-$runnerGames"
+    if ($champFg -eq '#fff') {
+        $scorePillBg = 'rgba(255,255,255,0.22)'
+        $scorePillBorder = 'rgba(255,255,255,0.4)'
+    } else {
+        $scorePillBg = 'rgba(0,0,0,0.18)'
+        $scorePillBorder = 'rgba(0,0,0,0.35)'
+    }
+    $sbLabel = ''
+    if ($league -eq 'nfl' -and $year -ge 1966) {
+        $sbNum = To-Roman ($year - 1965)
+        $sbLabel = "<div class=`"sbline`" style=`"color:$champFg`">$sbNum</div>"
+    }
+
+    $html = "<td style=`"background:$champColor;color:$champFg`">"
+
+    $html += $sbLabel
+    $html += "<div class=`"result-line`"><span class=`"trophy`">&#127942;</span><span class=`"champ`" style=`"color:$champNameColor;text-shadow:$champOutline`"><span class=`"titlecount`">$champCount</span> $champ</span><span class=`"recline-champ`">$champLine</span></div>"
+    $html += "<div class=`"result-line`"><span class=`"def-label`">def.</span><span class=`"runner`" style=`"background:$runnerColor;color:$runnerFg;border-color:$runnerSecondary`">$runner</span><span class=`"recline-runner`" style=`"color:$champFg`">$runnerLine</span><span class=`"score`" style=`"color:$champFg;background:$scorePillBg;border-color:$scorePillBorder`">$scoreLabel</span></div>"
+    $html += '</td>'
+    return $html
+}
+
+$rows = foreach ($y in $years) {
+    $row = "<tr><td class=`"year`">$y</td>"
+    $row += Build-Cell $mlb[$y] 'mlb' $secondary $y $cumulative
+    $row += Build-Cell $nfl[$y] 'nfl' $secondary $y $cumulative
+    $row += Build-Cell $nhl[$y] 'nhl' $secondary $y $cumulative
+    $row += Build-Cell $nba[$y] 'nba' $secondary $y $cumulative
+    $row += '</tr>'
+    $row
+}
+
+$tableBody = $rows -join "`n"
+
+$template = Get-Content -LiteralPath 'template.html' -Raw -Encoding UTF8
+$out = $template.Replace('__ROWS__', $tableBody)
+Set-Content -LiteralPath 'championship_chart.html' -Value $out -Encoding UTF8
+
+Write-Output "Rows: $($years.Count)"

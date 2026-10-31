@@ -1,0 +1,158 @@
+Anaheim Angels|#003263
+Arizona Diamondbacks|#E3D4AD
+Atlanta Braves|#13274F
+Baltimore Orioles|#000000
+Boston Americans|#0C2340
+Boston Braves|#13274F
+Boston Red Sox|#0C2340
+Brooklyn Dodgers|#FFFFFF
+Brooklyn Robins|#FFFFFF
+Chicago Cubs|#CC3433
+Chicago White Sox|#C4CED4
+Cincinnati Reds|#000000
+Cleveland Indians|#E50022
+Colorado Rockies|#C4CED4
+Detroit Tigers|#FA4616
+Florida Marlins|#EF3340
+Houston Astros|#EB6E1F
+Kansas City Royals|#BD9B60
+Los Angeles Dodgers|#FFFFFF
+Milwaukee Braves|#13274F
+Milwaukee Brewers|#FFC52F
+Minnesota Twins|#D31145
+New York Giants|#27251F
+New York Mets|#FF5910
+New York Yankees|#FFFFFF
+Oakland Athletics|#EFB21E
+Philadelphia Athletics|#EFB21E
+Philadelphia Phillies|#002D72
+Pittsburgh Pirates|#FDB827
+San Diego Padres|#FFC425
+San Francisco Giants|#27251F
+St. Louis Browns|#000000
+St. Louis Cardinals|#0C2340
+Tampa Bay Rays|#8FBCE6
+Texas Rangers|#003278
+Toronto Blue Jays|#1D2D5C
+Washington Nationals|#14225A
+Washington Senators|#D31145
+Akron Pros|#FFFFFF
+Arizona Cardinals|#000000
+Atlanta Falcons|#000000
+Baltimore Colts|#A2AAAD
+Baltimore Ravens|#000000
+Boston Redskins|#FFB612
+Buffalo All-Americans|#FFFFFF
+Buffalo Bills|#C60C30
+Canton Bulldogs|#FFFFFF
+Carolina Panthers|#101820
+Chicago Bears|#C83803
+Chicago Cardinals|#000000
+Chicago Staleys|#C83803
+Cincinnati Bengals|#000000
+Cleveland Browns|#FF3C00
+Cleveland Bulldogs|#FFFFFF
+Cleveland Rams|#FFA300
+Dallas Cowboys|#041E42
+Decatur Staleys|#C83803
+Denver Broncos|#002244
+Detroit Lions|#B0B7BC
+Edmonton Eskimos|#FFC20E
+Frankford Yellow Jackets|#A5ACAF
+Green Bay Packers|#FFB612
+Indianapolis Colts|#A2AAAD
+Kansas City Chiefs|#FFB81C
+Los Angeles Raiders|#A5ACAF
+Los Angeles Rams|#FFA300
+Miami Dolphins|#FC4C02
+Minnesota Vikings|#FFC62F
+New England Patriots|#C60C30
+New Orleans Saints|#101820
+New York Jets|#000000
+Oakland Raiders|#A5ACAF
+Philadelphia Eagles|#A5ACAF
+Pittsburgh Steelers|#101820
+Portsmouth Spartans|#B0B7BC
+Pottsville Maroons|#FFD700
+Providence Steam Roller|#FF7900
+San Diego Chargers|#FFC20E
+San Francisco 49ers|#B3995D
+Seattle Seahawks|#69BE28
+St. Louis Rams|#FFA300
+Tampa Bay Buccaneers|#FF7900
+Tennessee Titans|#0C2340
+Washington Redskins|#FFB612
+Boston Bruins|#FFB81C
+Buffalo Sabres|#FCB514
+Calgary Flames|#F1BE48
+Calgary Tigers|#F1BE48
+Carolina Hurricanes|#000000
+Chicago Black Hawks|#000000
+Chicago Blackhawks|#000000
+Colorado Avalanche|#236192
+Dallas Stars|#111111
+Detroit Red Wings|#FFFFFF
+Edmonton Oilers|#FF4C00
+Florida Panthers|#C8102E
+Los Angeles Kings|#A2AAAD
+Mighty Ducks of Anaheim|#000000
+Anaheim Ducks|#000000
+Minnesota North Stars|#FFB81C
+Montreal Canadiens|#192168
+Montreal Maroons|#FFFFFF
+Nashville Predators|#041E42
+New Jersey Devils|#000000
+New York Islanders|#F47D30
+New York Rangers|#CE1126
+Ottawa Senators|#E31837
+Ottawa Senators (orig.)|#FFD700
+Philadelphia Flyers|#000000
+Pittsburgh Penguins|#FCB514
+Portland Rosebuds|#B5985A
+San Jose Sharks|#000000
+Seattle Metropolitans|#FFFFFF
+St. Louis Blues|#FCB514
+Tampa Bay Lightning|#000000
+Toronto Arenas|#FFFFFF
+Toronto Maple Leafs|#FFFFFF
+Toronto St. Patricks|#FFFFFF
+Vancouver Canucks|#00843D
+Vancouver Millionaires|#8A2432
+Vegas Golden Knights|#333F42
+Victoria Cougars|#8A2432
+Washington Capitals|#041E42
+Baltimore Bullets|#E31837
+Boston Celtics|#BA9653
+Chicago Bulls|#000000
+Chicago Stags|#002868
+Cleveland Cavaliers|#FDBB30
+Dallas Mavericks|#002B5E
+Denver Nuggets|#FEC524
+Detroit Pistons|#1D42BA
+Fort Wayne Pistons|#1D42BA
+Golden State Warriors|#FFC72C
+Houston Rockets|#C4CED4
+Indiana Pacers|#FDBB30
+Los Angeles Lakers|#FDB927
+Miami Heat|#F9A01B
+Milwaukee Bucks|#EEE1C6
+Minneapolis Lakers|#FDB927
+New Jersey Nets|#FFFFFF
+New York Knicks|#F58426
+Oklahoma City Thunder|#EF3B24
+Orlando Magic|#C4CED4
+Philadelphia 76ers|#ED174C
+Philadelphia Warriors|#FFC72C
+Phoenix Suns|#E56020
+Portland Trail Blazers|#000000
+Rochester Royals|#63727A
+San Antonio Spurs|#C4CED4
+San Francisco Warriors|#FFC72C
+Seattle SuperSonics|#EF3B24
+St. Louis Hawks|#FDB927
+Syracuse Nationals|#ED174C
+Toronto Raptors|#753BBD
+Utah Jazz|#00471B
+Washington Bullets|#E31837
+Washington Capitols|#C8102E
+New York Giants (NFL)|#A71930

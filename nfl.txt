@@ -1,0 +1,106 @@
+﻿1920|Akron Pros|8-0-3||Decatur Staleys|10-1-2||#524640|#0B162A
+1921|Chicago Staleys|9-1-1||Buffalo All-Americans|9-1-2||#0B162A|#002147
+1922|Canton Bulldogs|10-0-1||Chicago Bears|9-3-0||#4F2C1D|#0B162A
+1923|Canton Bulldogs|11-0-1||Chicago Bears|9-2-1||#4F2C1D|#0B162A
+1924|Cleveland Bulldogs|7-1-1||Chicago Bears|6-1-4||#311D00|#0B162A
+1925|Chicago Cardinals|11-2-1||Pottsville Maroons|10-2-0||#97233F|#860038
+1926|Frankford Yellow Jackets|14-1-2||Chicago Bears|12-1-3||#FFC72C|#0B162A
+1927|New York Giants|11-1-1||Green Bay Packers|7-2-1||#0B2265|#203731
+1928|Providence Steam Roller|8-1-2||Frankford Yellow Jackets|11-3-2||#5B2B82|#FFC72C
+1929|Green Bay Packers|12-0-1||New York Giants|13-1-1||#203731|#0B2265
+1930|Green Bay Packers|10-3-1||New York Giants|13-4-0||#203731|#0B2265
+1931|Green Bay Packers|12-2-0||Portsmouth Spartans|11-3-0||#203731|#0076B6
+1932|Chicago Bears|7-1-6|9|Portsmouth Spartans|6-4-0|0|#0B162A|#0076B6
+1933|Chicago Bears|10-2-1|23|New York Giants|11-3-0|21|#0B162A|#0B2265
+1934|New York Giants|8-5-0|30|Chicago Bears|13-0-0|13|#0B2265|#0B162A
+1935|Detroit Lions|7-3-2|26|New York Giants|9-3-0|7|#0076B6|#0B2265
+1936|Green Bay Packers|10-1-1|21|Boston Redskins|7-5-0|6|#203731|#5A1414
+1937|Washington Redskins|8-3-0|28|Chicago Bears|9-1-1|21|#5A1414|#0B162A
+1938|New York Giants|8-2-1|23|Green Bay Packers|8-3-0|17|#0B2265|#203731
+1939|Green Bay Packers|9-2-0|27|New York Giants|9-1-1|0|#203731|#0B2265
+1940|Chicago Bears|8-3-0|73|Washington Redskins|9-2-0|0|#0B162A|#5A1414
+1941|Chicago Bears|10-1-0|37|New York Giants|8-3-0|9|#0B162A|#0B2265
+1942|Washington Redskins|10-1-0|14|Chicago Bears|11-0-0|6|#5A1414|#0B162A
+1943|Chicago Bears|8-1-1|41|Washington Redskins|6-3-1|21|#0B162A|#5A1414
+1944|Green Bay Packers|8-2-0|14|New York Giants|8-1-1|7|#203731|#0B2265
+1945|Cleveland Rams|9-1-0|15|Washington Redskins|8-2-0|14|#003594|#5A1414
+1946|Chicago Bears|8-2-1|24|New York Giants|7-3-1|14|#0B162A|#0B2265
+1947|Chicago Cardinals|9-3-0|28|Philadelphia Eagles|8-4-0|21|#97233F|#004C54
+1948|Philadelphia Eagles|9-2-1|7|Chicago Cardinals|11-1-0|0|#004C54|#97233F
+1949|Philadelphia Eagles|11-1-0|14|Los Angeles Rams|8-2-2|0|#004C54|#003594
+1950|Cleveland Browns|10-2-0|30|Los Angeles Rams|9-3-0|28|#311D00|#003594
+1951|Los Angeles Rams|8-4-0|24|Cleveland Browns|11-1-0|17|#003594|#311D00
+1952|Detroit Lions|9-3-0|17|Cleveland Browns|8-4-0|7|#0076B6|#311D00
+1953|Detroit Lions|10-2-0|17|Cleveland Browns|11-1-0|16|#0076B6|#311D00
+1954|Cleveland Browns|9-3-0|56|Detroit Lions|9-2-1|10|#311D00|#0076B6
+1955|Cleveland Browns|9-2-1|38|Los Angeles Rams|8-3-1|14|#311D00|#003594
+1956|New York Giants|8-3-1|47|Chicago Bears|9-2-1|7|#0B2265|#0B162A
+1957|Detroit Lions|8-4-0|59|Cleveland Browns|9-2-1|14|#0076B6|#311D00
+1958|Baltimore Colts|9-3-0|23|New York Giants|9-3-0|17|#002C5F|#0B2265
+1959|Baltimore Colts|9-3-0|31|New York Giants|10-2-0|16|#002C5F|#0B2265
+1960|Philadelphia Eagles|10-2-0|17|Green Bay Packers|8-4-0|13|#004C54|#203731
+1961|Green Bay Packers|11-3-0|37|New York Giants|10-3-1|0|#203731|#0B2265
+1962|Green Bay Packers|13-1-0|16|New York Giants|12-2-0|7|#203731|#0B2265
+1963|Chicago Bears|11-1-2|14|New York Giants|11-3-0|10|#0B162A|#0B2265
+1964|Cleveland Browns|10-3-1|27|Baltimore Colts|12-2-0|0|#311D00|#002C5F
+1965|Green Bay Packers|10-3-1|23|Cleveland Browns|11-3-0|12|#203731|#311D00
+1966|Green Bay Packers|12-2-0|35|Kansas City Chiefs|11-2-1|10|#203731|#E31837
+1967|Green Bay Packers|9-4-1|33|Oakland Raiders|13-1-0|14|#203731|#000000
+1968|New York Jets|11-3-0|16|Baltimore Colts|13-1-0|7|#125740|#002C5F
+1969|Kansas City Chiefs|11-3-0|23|Minnesota Vikings|12-2-0|7|#E31837|#4F2683
+1970|Baltimore Colts|11-2-1|16|Dallas Cowboys|10-4-0|13|#002C5F|#003594
+1971|Dallas Cowboys|11-3-0|24|Miami Dolphins|10-3-1|3|#003594|#008E97
+1972|Miami Dolphins|14-0-0|14|Washington Redskins|11-3-0|7|#008E97|#5A1414
+1973|Miami Dolphins|12-2-0|24|Minnesota Vikings|12-2-0|7|#008E97|#4F2683
+1974|Pittsburgh Steelers|10-3-1|16|Minnesota Vikings|10-4-0|6|#FFB612|#4F2683
+1975|Pittsburgh Steelers|12-2-0|21|Dallas Cowboys|10-4-0|17|#FFB612|#003594
+1976|Oakland Raiders|13-1-0|32|Minnesota Vikings|11-2-1|14|#000000|#4F2683
+1977|Dallas Cowboys|12-2-0|27|Denver Broncos|12-2-0|10|#003594|#FB4F14
+1978|Pittsburgh Steelers|14-2-0|35|Dallas Cowboys|12-4-0|31|#FFB612|#003594
+1979|Pittsburgh Steelers|12-4-0|31|Los Angeles Rams|9-7-0|19|#FFB612|#003594
+1980|Oakland Raiders|11-5-0|27|Philadelphia Eagles|12-4-0|10|#000000|#004C54
+1981|San Francisco 49ers|13-3-0|26|Cincinnati Bengals|12-4-0|21|#AA0000|#FB4F14
+1982|Washington Redskins|8-1-0|27|Miami Dolphins|7-2-0|17|#5A1414|#008E97
+1983|Los Angeles Raiders|12-4-0|38|Washington Redskins|14-2-0|9|#000000|#5A1414
+1984|San Francisco 49ers|15-1-0|38|Miami Dolphins|14-2-0|16|#AA0000|#008E97
+1985|Chicago Bears|15-1-0|46|New England Patriots|11-5-0|10|#0B162A|#002244
+1986|New York Giants|14-2-0|39|Denver Broncos|11-5-0|20|#0B2265|#FB4F14
+1987|Washington Redskins|11-4-0|42|Denver Broncos|10-4-1|10|#5A1414|#FB4F14
+1988|San Francisco 49ers|10-6-0|20|Cincinnati Bengals|12-4-0|16|#AA0000|#FB4F14
+1989|San Francisco 49ers|14-2-0|55|Denver Broncos|11-5-0|10|#AA0000|#FB4F14
+1990|New York Giants|13-3-0|20|Buffalo Bills|13-3-0|19|#0B2265|#00338D
+1991|Washington Redskins|14-2-0|37|Buffalo Bills|13-3-0|24|#5A1414|#00338D
+1992|Dallas Cowboys|13-3-0|52|Buffalo Bills|11-5-0|17|#003594|#00338D
+1993|Dallas Cowboys|12-4-0|30|Buffalo Bills|12-4-0|13|#003594|#00338D
+1994|San Francisco 49ers|13-3-0|49|San Diego Chargers|11-5-0|26|#AA0000|#0080C6
+1995|Dallas Cowboys|12-4-0|27|Pittsburgh Steelers|11-5-0|17|#003594|#FFB612
+1996|Green Bay Packers|13-3-0|35|New England Patriots|11-5-0|21|#203731|#002244
+1997|Denver Broncos|12-4-0|31|Green Bay Packers|13-3-0|24|#FB4F14|#203731
+1998|Denver Broncos|14-2-0|34|Atlanta Falcons|14-2-0|19|#FB4F14|#A71930
+1999|St. Louis Rams|13-3-0|23|Tennessee Titans|13-3-0|16|#003594|#4B92DB
+2000|Baltimore Ravens|12-4-0|34|New York Giants|12-4-0|7|#241773|#0B2265
+2001|New England Patriots|11-5-0|20|St. Louis Rams|14-2-0|17|#002244|#003594
+2002|Tampa Bay Buccaneers|12-4-0|48|Oakland Raiders|11-5-0|21|#D50A0A|#000000
+2003|New England Patriots|14-2-0|32|Carolina Panthers|11-5-0|29|#002244|#0085CA
+2004|New England Patriots|14-2-0|24|Philadelphia Eagles|13-3-0|21|#002244|#004C54
+2005|Pittsburgh Steelers|11-5-0|21|Seattle Seahawks|13-3-0|10|#FFB612|#002244
+2006|Indianapolis Colts|12-4-0|29|Chicago Bears|13-3-0|17|#002C5F|#0B162A
+2007|New York Giants|10-6-0|17|New England Patriots|16-0-0|14|#0B2265|#002244
+2008|Pittsburgh Steelers|12-4-0|27|Arizona Cardinals|9-7-0|23|#FFB612|#97233F
+2009|New Orleans Saints|13-3-0|31|Indianapolis Colts|14-2-0|17|#D3BC8D|#002C5F
+2010|Green Bay Packers|10-6-0|31|Pittsburgh Steelers|12-4-0|25|#203731|#FFB612
+2011|New York Giants|9-7-0|21|New England Patriots|13-3-0|17|#0B2265|#002244
+2012|Baltimore Ravens|10-6-0|34|San Francisco 49ers|11-4-1|31|#241773|#AA0000
+2013|Seattle Seahawks|13-3-0|43|Denver Broncos|13-3-0|8|#002244|#FB4F14
+2014|New England Patriots|12-4-0|28|Seattle Seahawks|12-4-0|24|#002244|#002244
+2015|Denver Broncos|12-4-0|24|Carolina Panthers|15-1-0|10|#FB4F14|#0085CA
+2016|New England Patriots|14-2-0|34|Atlanta Falcons|11-5-0|28|#002244|#A71930
+2017|Philadelphia Eagles|13-3-0|41|New England Patriots|13-3-0|33|#004C54|#002244
+2018|New England Patriots|11-5-0|13|Los Angeles Rams|13-3-0|3|#002244|#003594
+2019|Kansas City Chiefs|12-4-0|31|San Francisco 49ers|13-3-0|20|#E31837|#AA0000
+2020|Tampa Bay Buccaneers|11-5-0|31|Kansas City Chiefs|14-2-0|9|#D50A0A|#E31837
+2021|Los Angeles Rams|12-5-0|23|Cincinnati Bengals|10-7-0|20|#003594|#FB4F14
+2022|Kansas City Chiefs|14-3-0|38|Philadelphia Eagles|14-3-0|35|#E31837|#004C54
+2023|Kansas City Chiefs|11-6-0|25|San Francisco 49ers|12-5-0|22|#E31837|#AA0000
+2024|Philadelphia Eagles|14-3-0|40|Kansas City Chiefs|15-2-0|22|#004C54|#E31837
+2025|Seattle Seahawks|14-3-0|29|New England Patriots|14-3-0|13|#002244|#002244

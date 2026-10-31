@@ -1,0 +1,123 @@
+﻿1903|Boston Americans|91-47|5|Pittsburgh Pirates|91-49|3|#BD3039|#27251F
+1905|New York Giants|105-48|4|Philadelphia Athletics|92-56|1|#FD5A1E|#003831
+1906|Chicago White Sox|93-58|4|Chicago Cubs|116-36|2|#27251F|#0E3386
+1907|Chicago Cubs|107-45|4|Detroit Tigers|92-58|0|#0E3386|#0C2340
+1908|Chicago Cubs|99-55|4|Detroit Tigers|90-63|1|#0E3386|#0C2340
+1909|Pittsburgh Pirates|110-42|4|Detroit Tigers|98-54|3|#27251F|#0C2340
+1910|Philadelphia Athletics|102-48|4|Chicago Cubs|104-50|1|#003831|#0E3386
+1911|Philadelphia Athletics|101-50|4|New York Giants|99-54|2|#003831|#FD5A1E
+1912|Boston Red Sox|105-47|4|New York Giants|103-48|3|#BD3039|#FD5A1E
+1913|Philadelphia Athletics|96-57|4|New York Giants|101-51|1|#003831|#FD5A1E
+1914|Boston Braves|94-59|4|Philadelphia Athletics|99-53|0|#CE1141|#003831
+1915|Boston Red Sox|101-50|4|Philadelphia Phillies|90-62|1|#BD3039|#E81828
+1916|Boston Red Sox|91-63|4|Brooklyn Robins|94-60|1|#BD3039|#005A9C
+1917|Chicago White Sox|100-54|4|New York Giants|98-56|2|#27251F|#FD5A1E
+1918|Boston Red Sox|75-51|4|Chicago Cubs|84-45|2|#BD3039|#0E3386
+1919|Cincinnati Reds|96-44|5|Chicago White Sox|88-52|3|#C6011F|#27251F
+1920|Cleveland Indians|98-56|5|Brooklyn Robins|93-61|2|#E31937|#005A9C
+1921|New York Giants|94-59|5|New York Yankees|98-55|3|#FD5A1E|#003087
+1922|New York Giants|93-61|4|New York Yankees|94-60|0|#FD5A1E|#003087
+1923|New York Yankees|98-54|4|New York Giants|95-58|2|#003087|#FD5A1E
+1924|Washington Senators|92-62|4|New York Giants|93-60|3|#002B5C|#FD5A1E
+1925|Pittsburgh Pirates|95-58|4|Washington Senators|96-55|3|#27251F|#002B5C
+1926|St. Louis Cardinals|89-65|4|New York Yankees|91-63|3|#C41E3A|#003087
+1927|New York Yankees|110-44|4|Pittsburgh Pirates|94-60|0|#003087|#27251F
+1928|New York Yankees|101-53|4|St. Louis Cardinals|95-59|0|#003087|#C41E3A
+1929|Philadelphia Athletics|104-46|4|Chicago Cubs|98-54|1|#003831|#0E3386
+1930|Philadelphia Athletics|102-52|4|St. Louis Cardinals|92-62|2|#003831|#C41E3A
+1931|St. Louis Cardinals|101-53|4|Philadelphia Athletics|107-45|3|#C41E3A|#003831
+1932|New York Yankees|107-47|4|Chicago Cubs|90-64|0|#003087|#0E3386
+1933|New York Giants|91-61|4|Washington Senators|99-53|1|#FD5A1E|#002B5C
+1934|St. Louis Cardinals|95-58|4|Detroit Tigers|101-53|3|#C41E3A|#0C2340
+1935|Detroit Tigers|93-58|4|Chicago Cubs|100-54|2|#0C2340|#0E3386
+1936|New York Yankees|102-51|4|New York Giants|92-62|2|#003087|#FD5A1E
+1937|New York Yankees|102-52|4|New York Giants|95-57|1|#003087|#FD5A1E
+1938|New York Yankees|99-53|4|Chicago Cubs|89-63|0|#003087|#0E3386
+1939|New York Yankees|106-45|4|Cincinnati Reds|97-57|0|#003087|#C6011F
+1940|Cincinnati Reds|100-53|4|Detroit Tigers|90-64|3|#C6011F|#0C2340
+1941|New York Yankees|101-53|4|Brooklyn Dodgers|100-54|1|#003087|#005A9C
+1942|St. Louis Cardinals|106-48|4|New York Yankees|103-51|1|#C41E3A|#003087
+1943|New York Yankees|98-56|4|St. Louis Cardinals|105-49|1|#003087|#C41E3A
+1944|St. Louis Cardinals|105-49|4|St. Louis Browns|89-65|2|#C41E3A|#DF4601
+1945|Detroit Tigers|88-65|4|Chicago Cubs|98-56|3|#0C2340|#0E3386
+1946|St. Louis Cardinals|98-58|4|Boston Red Sox|104-50|3|#C41E3A|#BD3039
+1947|New York Yankees|97-57|4|Brooklyn Dodgers|94-60|3|#003087|#005A9C
+1948|Cleveland Indians|97-58|4|Boston Braves|91-62|2|#E31937|#CE1141
+1949|New York Yankees|97-57|4|Brooklyn Dodgers|97-57|1|#003087|#005A9C
+1950|New York Yankees|98-56|4|Philadelphia Phillies|91-63|0|#003087|#E81828
+1951|New York Yankees|98-56|4|New York Giants|98-59|2|#003087|#FD5A1E
+1952|New York Yankees|95-59|4|Brooklyn Dodgers|96-57|3|#003087|#005A9C
+1953|New York Yankees|99-52|4|Brooklyn Dodgers|105-49|2|#003087|#005A9C
+1954|New York Giants|97-57|4|Cleveland Indians|111-43|0|#FD5A1E|#E31937
+1955|Brooklyn Dodgers|98-55|4|New York Yankees|96-58|3|#005A9C|#003087
+1956|New York Yankees|97-57|4|Brooklyn Dodgers|93-61|3|#003087|#005A9C
+1957|Milwaukee Braves|95-59|4|New York Yankees|98-56|3|#CE1141|#003087
+1958|New York Yankees|92-62|4|Milwaukee Braves|92-62|3|#003087|#CE1141
+1959|Los Angeles Dodgers|88-68|4|Chicago White Sox|94-60|2|#005A9C|#27251F
+1960|Pittsburgh Pirates|95-59|4|New York Yankees|97-57|3|#27251F|#003087
+1961|New York Yankees|109-53|4|Cincinnati Reds|93-61|1|#003087|#C6011F
+1962|New York Yankees|96-66|4|San Francisco Giants|103-62|3|#003087|#FD5A1E
+1963|Los Angeles Dodgers|99-63|4|New York Yankees|104-57|0|#005A9C|#003087
+1964|St. Louis Cardinals|93-69|4|New York Yankees|99-63|3|#C41E3A|#003087
+1965|Los Angeles Dodgers|97-65|4|Minnesota Twins|102-60|3|#005A9C|#002B5C
+1966|Baltimore Orioles|97-63|4|Los Angeles Dodgers|95-67|0|#DF4601|#005A9C
+1967|St. Louis Cardinals|101-60|4|Boston Red Sox|92-70|3|#C41E3A|#BD3039
+1968|Detroit Tigers|103-59|4|St. Louis Cardinals|97-65|3|#0C2340|#C41E3A
+1969|New York Mets|100-62|4|Baltimore Orioles|109-53|1|#002D72|#DF4601
+1970|Baltimore Orioles|108-54|4|Cincinnati Reds|102-60|1|#DF4601|#C6011F
+1971|Pittsburgh Pirates|97-65|4|Baltimore Orioles|101-57|3|#27251F|#DF4601
+1972|Oakland Athletics|93-62|4|Cincinnati Reds|95-59|3|#003831|#C6011F
+1973|Oakland Athletics|94-68|4|New York Mets|82-79|3|#003831|#002D72
+1974|Oakland Athletics|90-72|4|Los Angeles Dodgers|102-60|1|#003831|#005A9C
+1975|Cincinnati Reds|108-54|4|Boston Red Sox|95-65|3|#C6011F|#BD3039
+1976|Cincinnati Reds|102-60|4|New York Yankees|97-62|0|#C6011F|#003087
+1977|New York Yankees|100-62|4|Los Angeles Dodgers|98-64|2|#003087|#005A9C
+1978|New York Yankees|100-63|4|Los Angeles Dodgers|95-67|2|#003087|#005A9C
+1979|Pittsburgh Pirates|98-64|4|Baltimore Orioles|102-57|3|#27251F|#DF4601
+1980|Philadelphia Phillies|91-71|4|Kansas City Royals|97-65|2|#E81828|#004687
+1981|Los Angeles Dodgers|63-47|4|New York Yankees|59-48|2|#005A9C|#003087
+1982|St. Louis Cardinals|92-70|4|Milwaukee Brewers|95-67|3|#C41E3A|#0A2351
+1983|Baltimore Orioles|98-64|4|Philadelphia Phillies|90-72|1|#DF4601|#E81828
+1984|Detroit Tigers|104-58|4|San Diego Padres|92-70|1|#0C2340|#2F241D
+1985|Kansas City Royals|91-71|4|St. Louis Cardinals|101-61|3|#004687|#C41E3A
+1986|New York Mets|108-54|4|Boston Red Sox|95-66|3|#002D72|#BD3039
+1987|Minnesota Twins|85-77|4|St. Louis Cardinals|95-67|3|#002B5C|#C41E3A
+1988|Los Angeles Dodgers|94-67|4|Oakland Athletics|104-58|1|#005A9C|#003831
+1989|Oakland Athletics|99-63|4|San Francisco Giants|92-70|0|#003831|#FD5A1E
+1990|Cincinnati Reds|91-71|4|Oakland Athletics|103-59|0|#C6011F|#003831
+1991|Minnesota Twins|95-67|4|Atlanta Braves|94-68|3|#002B5C|#CE1141
+1992|Toronto Blue Jays|96-66|4|Atlanta Braves|98-64|2|#134A8E|#CE1141
+1993|Toronto Blue Jays|95-67|4|Philadelphia Phillies|97-65|2|#134A8E|#E81828
+1994|NO SERIES (strike)|||||||
+1995|Atlanta Braves|90-54|4|Cleveland Indians|100-44|2|#CE1141|#E31937
+1996|New York Yankees|92-70|4|Atlanta Braves|96-66|2|#003087|#CE1141
+1997|Florida Marlins|92-70|4|Cleveland Indians|86-75|3|#00A3E0|#E31937
+1998|New York Yankees|114-48|4|San Diego Padres|98-64|0|#003087|#2F241D
+1999|New York Yankees|98-64|4|Atlanta Braves|103-59|0|#003087|#CE1141
+2000|New York Yankees|87-74|4|New York Mets|94-68|1|#003087|#002D72
+2001|Arizona Diamondbacks|92-70|4|New York Yankees|95-65|3|#A71930|#003087
+2002|Anaheim Angels|99-63|4|San Francisco Giants|95-66|3|#BA0021|#FD5A1E
+2003|Florida Marlins|91-71|4|New York Yankees|101-61|2|#00A3E0|#003087
+2004|Boston Red Sox|98-64|4|St. Louis Cardinals|105-57|0|#BD3039|#C41E3A
+2005|Chicago White Sox|99-63|4|Houston Astros|89-73|0|#27251F|#002D62
+2006|St. Louis Cardinals|83-78|4|Detroit Tigers|95-67|1|#C41E3A|#0C2340
+2007|Boston Red Sox|96-66|4|Colorado Rockies|90-73|0|#BD3039|#333366
+2008|Philadelphia Phillies|92-70|4|Tampa Bay Rays|97-65|1|#E81828|#092C5C
+2009|New York Yankees|103-59|4|Philadelphia Phillies|93-69|2|#003087|#E81828
+2010|San Francisco Giants|92-70|4|Texas Rangers|90-72|1|#FD5A1E|#C0111F
+2011|St. Louis Cardinals|90-72|4|Texas Rangers|96-66|3|#C41E3A|#C0111F
+2012|San Francisco Giants|94-68|4|Detroit Tigers|88-74|0|#FD5A1E|#0C2340
+2013|Boston Red Sox|97-65|4|St. Louis Cardinals|97-65|2|#BD3039|#C41E3A
+2014|San Francisco Giants|88-74|4|Kansas City Royals|89-73|3|#FD5A1E|#004687
+2015|Kansas City Royals|95-67|4|New York Mets|90-72|1|#004687|#002D72
+2016|Chicago Cubs|103-58|4|Cleveland Indians|94-67|3|#0E3386|#E31937
+2017|Houston Astros|101-61|4|Los Angeles Dodgers|104-58|3|#002D62|#005A9C
+2018|Boston Red Sox|108-54|4|Los Angeles Dodgers|92-71|1|#BD3039|#005A9C
+2019|Washington Nationals|93-69|4|Houston Astros|107-55|3|#AB0003|#002D62
+2020|Los Angeles Dodgers|43-17|4|Tampa Bay Rays|40-20|2|#005A9C|#092C5C
+2021|Atlanta Braves|88-73|4|Houston Astros|95-67|2|#CE1141|#002D62
+2022|Houston Astros|106-56|4|Philadelphia Phillies|87-75|2|#002D62|#E81828
+2023|Texas Rangers|90-72|4|Arizona Diamondbacks|84-78|1|#C0111F|#A71930
+2024|Los Angeles Dodgers|98-64|4|New York Yankees|94-68|1|#005A9C|#003087
+2025|Los Angeles Dodgers|93-69|4|Toronto Blue Jays|94-68|3|#005A9C|#134A8E
+2026|Milwaukee Brewers|103-59|4|Tampa Bay Rays|98-64|1|#0A2351|#092C5C

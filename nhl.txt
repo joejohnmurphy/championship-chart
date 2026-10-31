@@ -1,0 +1,112 @@
+﻿1915|Vancouver Millionaires|17-3|3|Ottawa Senators (orig.)|14-6|0|#8B0000|#000000
+1916|Montreal Canadiens|16-7-1|3|Portland Rosebuds|16-8|2|#AF1E2D|#722F37
+1917|Seattle Metropolitans|16-8|3|Montreal Canadiens|10-10|1|#00677F|#AF1E2D
+1918|Toronto Arenas|13-9|3|Vancouver Millionaires|17-7|2|#00205B|#8B0000
+1919|NO CUP AWARDED (flu pandemic)|||||||
+1920|Ottawa Senators (orig.)|19-5|3|Seattle Metropolitans|17-3|2|#000000|#00677F
+1921|Ottawa Senators (orig.)|14-10-2|3|Vancouver Millionaires|15-9|2|#000000|#8B0000
+1922|Toronto St. Patricks|13-10-1|3|Vancouver Millionaires|17-11|2|#00843D|#8B0000
+1923|Ottawa Senators (orig.)|14-9-1|2|Edmonton Eskimos|14-10|0|#000000|#041E42
+1924|Montreal Canadiens|13-11|2|Calgary Tigers|13-6-5|0|#AF1E2D|#C8102E
+1925|Victoria Cougars|16-8|3|Montreal Canadiens|17-11-2|1|#000000|#AF1E2D
+1926|Montreal Maroons|20-11-3|3|Victoria Cougars|16-8-4|1|#8A2432|#000000
+1927|Ottawa Senators (orig.)|30-10-4|2|Boston Bruins|21-20-3|0|#000000|#000000
+1928|New York Rangers|19-16-9|3|Montreal Maroons|24-14-6|2|#0038A8|#8A2432
+1929|Boston Bruins|26-13-5|2|New York Rangers|21-13-10|0|#000000|#0038A8
+1930|Montreal Canadiens|21-14-9|2|Boston Bruins|38-5-1|0|#AF1E2D|#000000
+1931|Montreal Canadiens|26-10-8|3|Chicago Black Hawks|24-17-3|2|#AF1E2D|#CF0A2C
+1932|Toronto Maple Leafs|23-18-7|3|New York Rangers|23-17-8|0|#00205B|#0038A8
+1933|New York Rangers|23-17-8|3|Toronto Maple Leafs|24-18-6|1|#0038A8|#00205B
+1934|Chicago Black Hawks|20-17-11|3|Detroit Red Wings|24-14-10|1|#CF0A2C|#CE1126
+1935|Montreal Maroons|24-19-5|3|Toronto Maple Leafs|30-14-4|0|#8A2432|#00205B
+1936|Detroit Red Wings|24-16-8|3|Toronto Maple Leafs|23-19-6|1|#CE1126|#00205B
+1937|Detroit Red Wings|25-14-9|3|New York Rangers|19-20-9|2|#CE1126|#0038A8
+1938|Chicago Black Hawks|14-25-9|3|Toronto Maple Leafs|24-15-9|1|#CF0A2C|#00205B
+1939|Boston Bruins|36-10-2|4|Toronto Maple Leafs|19-20-9|1|#000000|#00205B
+1940|New York Rangers|27-11-10|4|Toronto Maple Leafs|25-17-6|2|#0038A8|#00205B
+1941|Boston Bruins|27-8-13|4|Detroit Red Wings|21-16-11|0|#000000|#CE1126
+1942|Toronto Maple Leafs|27-18-3|4|Detroit Red Wings|19-25-4|3|#00205B|#CE1126
+1943|Detroit Red Wings|25-14-11|4|Boston Bruins|24-17-9|0|#CE1126|#000000
+1944|Montreal Canadiens|38-5-7|4|Chicago Black Hawks|22-23-5|0|#AF1E2D|#CF0A2C
+1945|Toronto Maple Leafs|24-22-4|4|Detroit Red Wings|31-14-5|3|#00205B|#CE1126
+1946|Montreal Canadiens|28-17-5|4|Boston Bruins|24-18-8|1|#AF1E2D|#000000
+1947|Toronto Maple Leafs|31-19-10|4|Montreal Canadiens|34-16-10|2|#00205B|#AF1E2D
+1948|Toronto Maple Leafs|32-15-13|4|Detroit Red Wings|30-18-12|0|#00205B|#CE1126
+1949|Toronto Maple Leafs|22-25-13|4|Detroit Red Wings|34-19-7|0|#00205B|#CE1126
+1950|Detroit Red Wings|37-19-14|4|New York Rangers|28-31-11|3|#CE1126|#0038A8
+1951|Toronto Maple Leafs|41-16-13|4|Montreal Canadiens|25-30-15|1|#00205B|#AF1E2D
+1952|Detroit Red Wings|44-14-12|4|Montreal Canadiens|34-26-10|0|#CE1126|#AF1E2D
+1953|Montreal Canadiens|28-23-19|4|Boston Bruins|28-29-13|1|#AF1E2D|#000000
+1954|Detroit Red Wings|37-19-14|4|Montreal Canadiens|35-24-11|3|#CE1126|#AF1E2D
+1955|Detroit Red Wings|42-17-11|4|Montreal Canadiens|41-18-11|3|#CE1126|#AF1E2D
+1956|Montreal Canadiens|45-15-10|4|Detroit Red Wings|30-24-16|1|#AF1E2D|#CE1126
+1957|Montreal Canadiens|35-23-12|4|Boston Bruins|34-24-12|1|#AF1E2D|#000000
+1958|Montreal Canadiens|43-17-10|4|Boston Bruins|27-28-15|2|#AF1E2D|#000000
+1959|Montreal Canadiens|39-18-13|4|Toronto Maple Leafs|27-32-11|1|#AF1E2D|#00205B
+1960|Montreal Canadiens|40-18-12|4|Toronto Maple Leafs|35-26-9|0|#AF1E2D|#00205B
+1961|Chicago Black Hawks|29-24-17|4|Detroit Red Wings|25-29-16|2|#CF0A2C|#CE1126
+1962|Toronto Maple Leafs|37-22-11|4|Chicago Black Hawks|31-26-13|2|#00205B|#CF0A2C
+1963|Toronto Maple Leafs|35-23-12|4|Detroit Red Wings|32-25-13|1|#00205B|#CE1126
+1964|Toronto Maple Leafs|33-25-12|4|Detroit Red Wings|30-29-11|3|#00205B|#CE1126
+1965|Montreal Canadiens|36-23-11|4|Chicago Black Hawks|34-28-8|3|#AF1E2D|#CF0A2C
+1966|Montreal Canadiens|41-21-8|4|Detroit Red Wings|31-27-12|2|#AF1E2D|#CE1126
+1967|Toronto Maple Leafs|32-27-11|4|Montreal Canadiens|32-25-13|2|#00205B|#AF1E2D
+1968|Montreal Canadiens|42-22-10|4|St. Louis Blues|27-31-16|0|#AF1E2D|#002F87
+1969|Montreal Canadiens|46-19-11|4|St. Louis Blues|37-25-14|0|#AF1E2D|#002F87
+1970|Boston Bruins|40-17-19|4|St. Louis Blues|37-27-12|0|#000000|#002F87
+1971|Montreal Canadiens|42-23-13|4|Chicago Black Hawks|49-20-9|3|#AF1E2D|#CF0A2C
+1972|Boston Bruins|54-13-11|4|New York Rangers|48-17-13|2|#000000|#0038A8
+1973|Montreal Canadiens|52-10-16|4|Chicago Black Hawks|42-27-9|2|#AF1E2D|#CF0A2C
+1974|Philadelphia Flyers|50-16-12|4|Boston Bruins|52-17-9|2|#F74902|#000000
+1975|Philadelphia Flyers|51-18-11|4|Buffalo Sabres|49-16-15|2|#F74902|#002654
+1976|Montreal Canadiens|58-11-11|4|Philadelphia Flyers|51-13-16|0|#AF1E2D|#F74902
+1977|Montreal Canadiens|60-8-12|4|Boston Bruins|49-23-8|0|#AF1E2D|#000000
+1978|Montreal Canadiens|59-10-11|4|Boston Bruins|51-18-11|2|#AF1E2D|#000000
+1979|Montreal Canadiens|52-17-11|4|New York Rangers|40-29-11|1|#AF1E2D|#0038A8
+1980|New York Islanders|39-28-13|4|Philadelphia Flyers|48-12-20|2|#00539B|#F74902
+1981|New York Islanders|48-18-14|4|Minnesota North Stars|35-28-17|1|#00539B|#006847
+1982|New York Islanders|54-16-10|4|Vancouver Canucks|30-33-17|0|#00539B|#00205B
+1983|New York Islanders|42-26-12|4|Edmonton Oilers|47-21-12|0|#00539B|#FC4C02
+1984|Edmonton Oilers|57-18-5|4|New York Islanders|50-26-4|1|#FC4C02|#00539B
+1985|Edmonton Oilers|49-20-11|4|Philadelphia Flyers|53-20-7|1|#FC4C02|#F74902
+1986|Montreal Canadiens|40-33-7|4|Calgary Flames|40-31-9|1|#AF1E2D|#C8102E
+1987|Edmonton Oilers|50-24-6|4|Philadelphia Flyers|46-26-8|3|#FC4C02|#F74902
+1988|Edmonton Oilers|44-25-11|4|Boston Bruins|44-30-6|0|#FC4C02|#000000
+1989|Calgary Flames|54-17-9|4|Montreal Canadiens|53-18-9|2|#C8102E|#AF1E2D
+1990|Edmonton Oilers|38-28-14|4|Boston Bruins|46-25-9|1|#FC4C02|#000000
+1991|Pittsburgh Penguins|41-33-6|4|Minnesota North Stars|27-39-14|2|#000000|#006847
+1992|Pittsburgh Penguins|39-32-9|4|Chicago Blackhawks|36-29-15|0|#000000|#CF0A2C
+1993|Montreal Canadiens|48-30-6|4|Los Angeles Kings|39-35-10|1|#AF1E2D|#111111
+1994|New York Rangers|52-24-8|4|Vancouver Canucks|41-40-3|3|#0038A8|#00205B
+1995|New Jersey Devils|22-18-8|4|Detroit Red Wings|33-11-4|0|#CE1126|#CE1126
+1996|Colorado Avalanche|47-25-10|4|Florida Panthers|41-31-10|0|#6F263D|#041E42
+1997|Detroit Red Wings|38-26-18|4|Philadelphia Flyers|45-24-13|0|#CE1126|#F74902
+1998|Detroit Red Wings|44-23-15|4|Washington Capitals|40-30-12|0|#CE1126|#C8102E
+1999|Dallas Stars|51-19-12|4|Buffalo Sabres|37-28-17|2|#006847|#002654
+2000|New Jersey Devils|45-24-13|4|Dallas Stars|43-29-8-2|2|#CE1126|#006847
+2001|Colorado Avalanche|52-16-10-4|4|New Jersey Devils|48-19-10-5|3|#6F263D|#CE1126
+2002|Detroit Red Wings|51-17-10-4|4|Carolina Hurricanes|35-26-12-9|1|#CE1126|#CC0000
+2003|New Jersey Devils|46-20-10-6|4|Mighty Ducks of Anaheim|40-27-9-6|3|#CE1126|#F47A38
+2004|Tampa Bay Lightning|46-22-8-6|4|Calgary Flames|42-30-6-4|3|#002868|#C8102E
+2005|NO CUP AWARDED (lockout)|||||||
+2006|Carolina Hurricanes|52-22-8|4|Edmonton Oilers|41-28-13|3|#CC0000|#FC4C02
+2007|Anaheim Ducks|48-20-14|4|Ottawa Senators|48-25-9|1|#F47A38|#C52032
+2008|Detroit Red Wings|54-21-7|4|Pittsburgh Penguins|47-27-8|2|#CE1126|#000000
+2009|Pittsburgh Penguins|45-28-9|4|Detroit Red Wings|51-21-10|3|#000000|#CE1126
+2010|Chicago Blackhawks|52-22-8|4|Philadelphia Flyers|41-35-6|2|#CF0A2C|#F74902
+2011|Boston Bruins|46-25-11|4|Vancouver Canucks|54-19-9|3|#000000|#00205B
+2012|Los Angeles Kings|40-27-15|4|New Jersey Devils|48-24-10|2|#111111|#CE1126
+2013|Chicago Blackhawks|36-7-5|4|Boston Bruins|28-14-6|2|#CF0A2C|#000000
+2014|Los Angeles Kings|46-28-8|4|New York Rangers|45-31-6|1|#111111|#0038A8
+2015|Chicago Blackhawks|48-28-6|4|Tampa Bay Lightning|50-24-8|2|#CF0A2C|#002868
+2016|Pittsburgh Penguins|48-26-8|4|San Jose Sharks|46-27-9|2|#000000|#006D75
+2017|Pittsburgh Penguins|50-21-11|4|Nashville Predators|41-29-12|2|#000000|#FFB81C
+2018|Washington Capitals|49-26-7|4|Vegas Golden Knights|51-24-7|1|#C8102E|#B4975A
+2019|St. Louis Blues|45-28-9|4|Boston Bruins|49-24-9|3|#002F87|#000000
+2020|Tampa Bay Lightning|43-21-6|4|Dallas Stars|37-24-8|2|#002868|#006847
+2021|Tampa Bay Lightning|36-14-6|4|Montreal Canadiens|24-21-11|1|#002868|#AF1E2D
+2022|Colorado Avalanche|56-19-7|4|Tampa Bay Lightning|51-23-8|2|#6F263D|#002868
+2023|Vegas Golden Knights|51-22-9|4|Florida Panthers|42-32-8|1|#B4975A|#041E42
+2024|Florida Panthers|52-24-6|4|Edmonton Oilers|49-27-6|3|#041E42|#FC4C02
+2025|Florida Panthers|47-24-11|4|Edmonton Oilers|48-26-8|2|#041E42|#FC4C02
+2026|Carolina Hurricanes|53-22-7|4|Vegas Golden Knights|39-26-17|2|#CC0000|#B4975A
