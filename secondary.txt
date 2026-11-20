@@ -26,7 +26,7 @@ New York Yankees|#FFFFFF
 Oakland Athletics|#EFB21E
 Philadelphia Athletics|#EFB21E
 Philadelphia Phillies|#002D72
-Pittsburgh Pirates|#FDB827
+Pittsburgh Pirates|#27251F
 San Diego Padres|#FFC425
 San Francisco Giants|#27251F
 St. Louis Browns|#000000
@@ -71,7 +71,7 @@ New Orleans Saints|#101820
 New York Jets|#000000
 Oakland Raiders|#A5ACAF
 Philadelphia Eagles|#A5ACAF
-Pittsburgh Steelers|#101820
+Pittsburgh Steelers|#FFB612
 Portsmouth Spartans|#B0B7BC
 Pottsville Maroons|#FFD700
 Providence Steam Roller|#FF7900
@@ -128,8 +128,8 @@ Chicago Stags|#002868
 Cleveland Cavaliers|#FDBB30
 Dallas Mavericks|#002B5E
 Denver Nuggets|#FEC524
-Detroit Pistons|#1D42BA
-Fort Wayne Pistons|#1D42BA
+Detroit Pistons|#C8102E
+Fort Wayne Pistons|#C8102E
 Golden State Warriors|#FFC72C
 Houston Rockets|#C4CED4
 Indiana Pacers|#FDBB30

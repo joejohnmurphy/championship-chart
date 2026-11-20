@@ -52,12 +52,12 @@
 1971|Dallas Cowboys|11-3-0|24|Miami Dolphins|10-3-1|3|#003594|#008E97
 1972|Miami Dolphins|14-0-0|14|Washington Redskins|11-3-0|7|#008E97|#5A1414
 1973|Miami Dolphins|12-2-0|24|Minnesota Vikings|12-2-0|7|#008E97|#4F2683
-1974|Pittsburgh Steelers|10-3-1|16|Minnesota Vikings|10-4-0|6|#FFB612|#4F2683
-1975|Pittsburgh Steelers|12-2-0|21|Dallas Cowboys|10-4-0|17|#FFB612|#003594
+1974|Pittsburgh Steelers|10-3-1|16|Minnesota Vikings|10-4-0|6|#101820|#4F2683
+1975|Pittsburgh Steelers|12-2-0|21|Dallas Cowboys|10-4-0|17|#101820|#003594
 1976|Oakland Raiders|13-1-0|32|Minnesota Vikings|11-2-1|14|#000000|#4F2683
 1977|Dallas Cowboys|12-2-0|27|Denver Broncos|12-2-0|10|#003594|#FB4F14
-1978|Pittsburgh Steelers|14-2-0|35|Dallas Cowboys|12-4-0|31|#FFB612|#003594
-1979|Pittsburgh Steelers|12-4-0|31|Los Angeles Rams|9-7-0|19|#FFB612|#003594
+1978|Pittsburgh Steelers|14-2-0|35|Dallas Cowboys|12-4-0|31|#101820|#003594
+1979|Pittsburgh Steelers|12-4-0|31|Los Angeles Rams|9-7-0|19|#101820|#003594
 1980|Oakland Raiders|11-5-0|27|Philadelphia Eagles|12-4-0|10|#000000|#004C54
 1981|San Francisco 49ers|13-3-0|26|Cincinnati Bengals|12-4-0|21|#AA0000|#FB4F14
 1982|Washington Redskins|8-1-0|27|Miami Dolphins|7-2-0|17|#5A1414|#008E97
@@ -73,7 +73,7 @@
 1992|Dallas Cowboys|13-3-0|52|Buffalo Bills|11-5-0|17|#003594|#00338D
 1993|Dallas Cowboys|12-4-0|30|Buffalo Bills|12-4-0|13|#003594|#00338D
 1994|San Francisco 49ers|13-3-0|49|San Diego Chargers|11-5-0|26|#AA0000|#0080C6
-1995|Dallas Cowboys|12-4-0|27|Pittsburgh Steelers|11-5-0|17|#003594|#FFB612
+1995|Dallas Cowboys|12-4-0|27|Pittsburgh Steelers|11-5-0|17|#003594|#101820
 1996|Green Bay Packers|13-3-0|35|New England Patriots|11-5-0|21|#203731|#002244
 1997|Denver Broncos|12-4-0|31|Green Bay Packers|13-3-0|24|#FB4F14|#203731
 1998|Denver Broncos|14-2-0|34|Atlanta Falcons|14-2-0|19|#FB4F14|#A71930
@@ -83,12 +83,12 @@
 2002|Tampa Bay Buccaneers|12-4-0|48|Oakland Raiders|11-5-0|21|#D50A0A|#000000
 2003|New England Patriots|14-2-0|32|Carolina Panthers|11-5-0|29|#002244|#0085CA
 2004|New England Patriots|14-2-0|24|Philadelphia Eagles|13-3-0|21|#002244|#004C54
-2005|Pittsburgh Steelers|11-5-0|21|Seattle Seahawks|13-3-0|10|#FFB612|#002244
+2005|Pittsburgh Steelers|11-5-0|21|Seattle Seahawks|13-3-0|10|#101820|#002244
 2006|Indianapolis Colts|12-4-0|29|Chicago Bears|13-3-0|17|#002C5F|#0B162A
 2007|New York Giants|10-6-0|17|New England Patriots|16-0-0|14|#0B2265|#002244
-2008|Pittsburgh Steelers|12-4-0|27|Arizona Cardinals|9-7-0|23|#FFB612|#97233F
+2008|Pittsburgh Steelers|12-4-0|27|Arizona Cardinals|9-7-0|23|#101820|#97233F
 2009|New Orleans Saints|13-3-0|31|Indianapolis Colts|14-2-0|17|#D3BC8D|#002C5F
-2010|Green Bay Packers|10-6-0|31|Pittsburgh Steelers|12-4-0|25|#203731|#FFB612
+2010|Green Bay Packers|10-6-0|31|Pittsburgh Steelers|12-4-0|25|#203731|#101820
 2011|New York Giants|9-7-0|21|New England Patriots|13-3-0|17|#0B2265|#002244
 2012|Baltimore Ravens|10-6-0|34|San Francisco 49ers|11-4-1|31|#241773|#AA0000
 2013|Seattle Seahawks|13-3-0|43|Denver Broncos|13-3-0|8|#002244|#FB4F14

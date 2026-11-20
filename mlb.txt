@@ -1,9 +1,9 @@
-﻿1903|Boston Americans|91-47|5|Pittsburgh Pirates|91-49|3|#BD3039|#27251F
+﻿1903|Boston Americans|91-47|5|Pittsburgh Pirates|91-49|3|#BD3039|#FDB827
 1905|New York Giants|105-48|4|Philadelphia Athletics|92-56|1|#FD5A1E|#003831
 1906|Chicago White Sox|93-58|4|Chicago Cubs|116-36|2|#27251F|#0E3386
 1907|Chicago Cubs|107-45|4|Detroit Tigers|92-58|0|#0E3386|#0C2340
 1908|Chicago Cubs|99-55|4|Detroit Tigers|90-63|1|#0E3386|#0C2340
-1909|Pittsburgh Pirates|110-42|4|Detroit Tigers|98-54|3|#27251F|#0C2340
+1909|Pittsburgh Pirates|110-42|4|Detroit Tigers|98-54|3|#FDB827|#0C2340
 1910|Philadelphia Athletics|102-48|4|Chicago Cubs|104-50|1|#003831|#0E3386
 1911|Philadelphia Athletics|101-50|4|New York Giants|99-54|2|#003831|#FD5A1E
 1912|Boston Red Sox|105-47|4|New York Giants|103-48|3|#BD3039|#FD5A1E
@@ -19,9 +19,9 @@
 1922|New York Giants|93-61|4|New York Yankees|94-60|0|#FD5A1E|#003087
 1923|New York Yankees|98-54|4|New York Giants|95-58|2|#003087|#FD5A1E
 1924|Washington Senators|92-62|4|New York Giants|93-60|3|#002B5C|#FD5A1E
-1925|Pittsburgh Pirates|95-58|4|Washington Senators|96-55|3|#27251F|#002B5C
+1925|Pittsburgh Pirates|95-58|4|Washington Senators|96-55|3|#FDB827|#002B5C
 1926|St. Louis Cardinals|89-65|4|New York Yankees|91-63|3|#C41E3A|#003087
-1927|New York Yankees|110-44|4|Pittsburgh Pirates|94-60|0|#003087|#27251F
+1927|New York Yankees|110-44|4|Pittsburgh Pirates|94-60|0|#003087|#FDB827
 1928|New York Yankees|101-53|4|St. Louis Cardinals|95-59|0|#003087|#C41E3A
 1929|Philadelphia Athletics|104-46|4|Chicago Cubs|98-54|1|#003831|#0E3386
 1930|Philadelphia Athletics|102-52|4|St. Louis Cardinals|92-62|2|#003831|#C41E3A
@@ -54,7 +54,7 @@
 1957|Milwaukee Braves|95-59|4|New York Yankees|98-56|3|#CE1141|#003087
 1958|New York Yankees|92-62|4|Milwaukee Braves|92-62|3|#003087|#CE1141
 1959|Los Angeles Dodgers|88-68|4|Chicago White Sox|94-60|2|#005A9C|#27251F
-1960|Pittsburgh Pirates|95-59|4|New York Yankees|97-57|3|#27251F|#003087
+1960|Pittsburgh Pirates|95-59|4|New York Yankees|97-57|3|#FDB827|#003087
 1961|New York Yankees|109-53|4|Cincinnati Reds|93-61|1|#003087|#C6011F
 1962|New York Yankees|96-66|4|San Francisco Giants|103-62|3|#003087|#FD5A1E
 1963|Los Angeles Dodgers|99-63|4|New York Yankees|104-57|0|#005A9C|#003087
@@ -65,7 +65,7 @@
 1968|Detroit Tigers|103-59|4|St. Louis Cardinals|97-65|3|#0C2340|#C41E3A
 1969|New York Mets|100-62|4|Baltimore Orioles|109-53|1|#002D72|#DF4601
 1970|Baltimore Orioles|108-54|4|Cincinnati Reds|102-60|1|#DF4601|#C6011F
-1971|Pittsburgh Pirates|97-65|4|Baltimore Orioles|101-57|3|#27251F|#DF4601
+1971|Pittsburgh Pirates|97-65|4|Baltimore Orioles|101-57|3|#FDB827|#DF4601
 1972|Oakland Athletics|93-62|4|Cincinnati Reds|95-59|3|#003831|#C6011F
 1973|Oakland Athletics|94-68|4|New York Mets|82-79|3|#003831|#002D72
 1974|Oakland Athletics|90-72|4|Los Angeles Dodgers|102-60|1|#003831|#005A9C
@@ -73,7 +73,7 @@
 1976|Cincinnati Reds|102-60|4|New York Yankees|97-62|0|#C6011F|#003087
 1977|New York Yankees|100-62|4|Los Angeles Dodgers|98-64|2|#003087|#005A9C
 1978|New York Yankees|100-63|4|Los Angeles Dodgers|95-67|2|#003087|#005A9C
-1979|Pittsburgh Pirates|98-64|4|Baltimore Orioles|102-57|3|#27251F|#DF4601
+1979|Pittsburgh Pirates|98-64|4|Baltimore Orioles|102-57|3|#FDB827|#DF4601
 1980|Philadelphia Phillies|91-71|4|Kansas City Royals|97-65|2|#E81828|#004687
 1981|Los Angeles Dodgers|63-47|4|New York Yankees|59-48|2|#005A9C|#003087
 1982|St. Louis Cardinals|92-70|4|Milwaukee Brewers|95-67|3|#C41E3A|#0A2351

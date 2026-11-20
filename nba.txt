@@ -2,12 +2,12 @@
 1948|Baltimore Bullets|28-20|4|Philadelphia Warriors|27-21|2|#002B5C|#1D428A
 1949|Minneapolis Lakers|44-16|4|Washington Capitols|38-22|2|#552583|#A6192E
 1950|Minneapolis Lakers|51-17|4|Syracuse Nationals|51-13|2|#552583|#006BB6
-1951|Rochester Royals|41-27|4|New York Knicks|36-30|3|#5A2D81|#006BB6
-1952|Minneapolis Lakers|40-26|4|New York Knicks|37-29|3|#552583|#006BB6
-1953|Minneapolis Lakers|48-22|4|New York Knicks|47-23|1|#552583|#006BB6
+1951|Rochester Royals|41-27|4|New York Knicks|36-30|3|#5A2D81|#1D428A
+1952|Minneapolis Lakers|40-26|4|New York Knicks|37-29|3|#552583|#1D428A
+1953|Minneapolis Lakers|48-22|4|New York Knicks|47-23|1|#552583|#1D428A
 1954|Minneapolis Lakers|46-26|4|Syracuse Nationals|42-30|3|#552583|#006BB6
-1955|Syracuse Nationals|43-29|4|Fort Wayne Pistons|43-29|3|#006BB6|#C8102E
-1956|Philadelphia Warriors|45-27|4|Fort Wayne Pistons|37-35|1|#1D428A|#C8102E
+1955|Syracuse Nationals|43-29|4|Fort Wayne Pistons|43-29|3|#006BB6|#1D42BA
+1956|Philadelphia Warriors|45-27|4|Fort Wayne Pistons|37-35|1|#1D428A|#1D42BA
 1957|Boston Celtics|44-28|4|St. Louis Hawks|34-38|3|#007A33|#E03A3E
 1958|St. Louis Hawks|41-31|4|Boston Celtics|49-23|2|#E03A3E|#007A33
 1959|Boston Celtics|52-20|4|Minneapolis Lakers|33-39|0|#007A33|#552583
@@ -21,10 +21,10 @@
 1967|Philadelphia 76ers|68-13|4|San Francisco Warriors|44-37|2|#006BB6|#1D428A
 1968|Boston Celtics|54-28|4|Los Angeles Lakers|52-30|2|#007A33|#552583
 1969|Boston Celtics|48-34|4|Los Angeles Lakers|55-27|3|#007A33|#552583
-1970|New York Knicks|60-22|4|Los Angeles Lakers|46-36|3|#006BB6|#552583
+1970|New York Knicks|60-22|4|Los Angeles Lakers|46-36|3|#1D428A|#552583
 1971|Milwaukee Bucks|66-16|4|Baltimore Bullets|42-40|0|#00471B|#002B5C
-1972|Los Angeles Lakers|69-13|4|New York Knicks|48-34|1|#552583|#006BB6
-1973|New York Knicks|57-25|4|Los Angeles Lakers|60-22|1|#006BB6|#552583
+1972|Los Angeles Lakers|69-13|4|New York Knicks|48-34|1|#552583|#1D428A
+1973|New York Knicks|57-25|4|Los Angeles Lakers|60-22|1|#1D428A|#552583
 1974|Boston Celtics|56-26|4|Milwaukee Bucks|59-23|3|#007A33|#00471B
 1975|Golden State Warriors|48-34|4|Washington Bullets|60-22|0|#1D428A|#002B5C
 1976|Boston Celtics|54-28|4|Phoenix Suns|42-40|2|#007A33|#1D1160
@@ -39,24 +39,24 @@
 1985|Los Angeles Lakers|62-20|4|Boston Celtics|63-19|2|#552583|#007A33
 1986|Boston Celtics|67-15|4|Houston Rockets|51-31|2|#007A33|#9E1B32
 1987|Los Angeles Lakers|65-17|4|Boston Celtics|59-23|2|#552583|#007A33
-1988|Los Angeles Lakers|62-20|4|Detroit Pistons|54-28|3|#552583|#C8102E
-1989|Detroit Pistons|63-19|4|Los Angeles Lakers|57-25|0|#C8102E|#552583
-1990|Detroit Pistons|59-23|4|Portland Trail Blazers|59-23|1|#C8102E|#E03A3E
+1988|Los Angeles Lakers|62-20|4|Detroit Pistons|54-28|3|#552583|#1D42BA
+1989|Detroit Pistons|63-19|4|Los Angeles Lakers|57-25|0|#1D42BA|#552583
+1990|Detroit Pistons|59-23|4|Portland Trail Blazers|59-23|1|#1D42BA|#E03A3E
 1991|Chicago Bulls|61-21|4|Los Angeles Lakers|58-24|1|#CE1141|#552583
 1992|Chicago Bulls|67-15|4|Portland Trail Blazers|57-25|2|#CE1141|#E03A3E
 1993|Chicago Bulls|57-25|4|Phoenix Suns|62-20|2|#CE1141|#1D1160
-1994|Houston Rockets|58-24|4|New York Knicks|57-25|3|#9E1B32|#006BB6
+1994|Houston Rockets|58-24|4|New York Knicks|57-25|3|#9E1B32|#1D428A
 1995|Houston Rockets|47-35|4|Orlando Magic|57-25|0|#9E1B32|#0077C0
 1996|Chicago Bulls|72-10|4|Seattle SuperSonics|64-18|2|#CE1141|#007AC1
 1997|Chicago Bulls|69-13|4|Utah Jazz|64-18|2|#CE1141|#002B5C
 1998|Chicago Bulls|62-20|4|Utah Jazz|62-20|2|#CE1141|#002B5C
-1999|San Antonio Spurs|37-13|4|New York Knicks|27-23|1|#000000|#006BB6
+1999|San Antonio Spurs|37-13|4|New York Knicks|27-23|1|#000000|#1D428A
 2000|Los Angeles Lakers|67-15|4|Indiana Pacers|56-26|2|#552583|#002D62
 2001|Los Angeles Lakers|56-26|4|Philadelphia 76ers|56-26|1|#552583|#006BB6
 2002|Los Angeles Lakers|58-24|4|New Jersey Nets|52-30|0|#552583|#002A8F
 2003|San Antonio Spurs|60-22|4|New Jersey Nets|49-33|2|#000000|#002A8F
-2004|Detroit Pistons|54-28|4|Los Angeles Lakers|56-26|1|#C8102E|#552583
-2005|San Antonio Spurs|59-23|4|Detroit Pistons|54-28|3|#000000|#C8102E
+2004|Detroit Pistons|54-28|4|Los Angeles Lakers|56-26|1|#1D42BA|#552583
+2005|San Antonio Spurs|59-23|4|Detroit Pistons|54-28|3|#000000|#1D42BA
 2006|Miami Heat|52-30|4|Dallas Mavericks|60-22|2|#98002E|#00538C
 2007|San Antonio Spurs|58-24|4|Cleveland Cavaliers|50-32|0|#000000|#860038
 2008|Boston Celtics|66-16|4|Los Angeles Lakers|57-25|2|#007A33|#552583
@@ -77,4 +77,4 @@
 2023|Denver Nuggets|53-29|4|Miami Heat|44-38|1|#0E2240|#98002E
 2024|Boston Celtics|64-18|4|Dallas Mavericks|50-32|1|#007A33|#00538C
 2025|Oklahoma City Thunder|68-14|4|Indiana Pacers|50-32|3|#007AC1|#002D62
-2026|New York Knicks|53-29|4|San Antonio Spurs|62-20|1|#006BB6|#000000
+2026|New York Knicks|53-29|4|San Antonio Spurs|62-20|1|#1D428A|#000000
