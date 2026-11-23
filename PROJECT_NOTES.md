@@ -949,3 +949,237 @@ would be Feb 2027).
       read "MLB &#9918; WORLD SERIES" with no dash; Thunder renders in
       plain legible white; Cubs/Astros/Patriots all read as saturated,
       recognizably-colored team names rather than pastel pink/peach.
+46. **Worked GitHub issue #3 "cosmetic issues"** (11 items). No `gh`/token
+    available in this sandbox (checked again, still absent) -- read via the
+    public REST API through webfetch, same as issues #1/#2 in entry 35.
+    Comment-ready summary text was handed to the user directly rather than
+    posted. All changes screenshot-verified (headless Edge +
+    `System.Drawing` crop/zoom) before/after, per the process rule from
+    entries 38/40.
+    - **Root-caused and fixed the recurring "pink" team names for good**
+      (items 3/4/5/11: Chiefs, Pistons, Patriots, Cubs). The real problem
+      wasn't `Get-LegibleColor`'s search strategy (already fixed in entry
+      45) -- it was the minimum-contrast-ratio bar itself. A direct
+      side-by-side screenshot test (literal unadjusted Pistons red
+      `#C8102E` on their blue, raw contrast ratio only ~1.4, vs. two
+      algorithmically-adjusted versions) showed the **literal color with
+      just the existing black text-stroke outline looked best of the
+      three** -- the stroke was already doing the legibility work, making
+      the contrast-ratio adjustment counterproductive busywork that only
+      ever made colors worse (washed toward pink/pastel) without a
+      visible legibility benefit. Replaced the old inline contrast logic
+      in `Build-Cell` with a new `Get-ChampNameColor` function and dropped
+      the minimum ratio from 4.5 (then briefly tested at 3.2) down to
+      **2.0** -- low enough that most previously-"fixed" team colors now
+      render as their literal, unmodified secondary color (Chiefs gold
+      `#FFB81C`, Patriots red `#C60C30`, Cubs red `#CC3433` all pass
+      through untouched), with the lightness-walk adjustment only
+      kicking in for genuinely low-contrast pairs like Pistons
+      (`#C8102E` on `#1D42BA`, raw ratio 1.4) where it now lands on a much
+      more vivid true red (`#EF3150`) instead of the old washed salmon/
+      pink. Re-ran the full-dataset scan afterward (every champion across
+      all 4 leagues) to confirm no team was left with a literal illegible
+      pairing -- worst cases (e.g. Vegas Golden Knights' tan-on-tan) still
+      get nudged, just less aggressively.
+    - Added a parallel small fix (item 6) for the opposite problem: a
+      secondary color that already clears the (now much lower) bar but is
+      still quite dark (e.g. a black secondary on an orange background,
+      SF Giants/Broncos/Oilers) now gets a gentle lightness bump (+0.22,
+      only if it doesn't tank the contrast below 1.6) purely for a softer
+      look, since passing colors were previously left completely
+      untouched even when borderline-black.
+    - **Item 10 (trophy "shading" on light/gold backgrounds not working)**:
+      root cause was a blurred `filter: drop-shadow(...)` on a tiny
+      (~8px) color-emoji glyph -- at that render size the blur completely
+      destroyed the trophy's shape, turning it into an unrecognizable
+      blob/medal-like smear (confirmed via zoomed screenshot, e.g. the
+      2009 New Orleans Saints row). Replaced with a zero-blur,
+      8-directional 1px-offset `text-shadow` (the classic hard-edge
+      "pixel outline" trick) -- this traces the glyph's actual alpha
+      shape instead of blurring it, so the trophy reads as a trophy with
+      a crisp dark edge, same as the already-working champion-name
+      outline technique elsewhere in the project.
+    - **Item 1 (runner-up "shadow" box not reading as a shadow)**: built a
+      5-option visual comparison sheet (saved to
+      `%TEMP%\opencode\runner_review.png`, current/asymmetric-border vs.
+      thin-border-plus-soft-shadow vs. double-ring-inset vs.
+      bottom-accent-bar vs. pressed-tab-gradient) and picked "double-ring
+      inset" -- a thin solid border plus a `box-shadow: 0 0 0 2px
+      rgba(255,255,255,0.55)` halo -- as the cleanest/most "artistic"
+      option without a heavy border or a smeared shadow. Replaces the
+      asymmetric `border-width: 1px 3px 3px 1px` from entry 45 entirely
+      (both the base and `@media print` rules).
+    - **Item 2 ("A" in Anaheim Ducks cut off on the left)**: root cause is
+      a known flexbox quirk -- a flex item with `overflow:hidden;
+      white-space:nowrap` sitting inside a `justify-content:center`
+      parent gets clipped symmetrically from *both* sides once it's
+      wider than the available space, not just truncated with an
+      ellipsis on the right, so sufficiently long/wide names can lose
+      their first letter(s) before any ellipsis would show (window-width
+      dependent -- didn't reproduce at this session's 1600px test width,
+      but the mechanism is real and will bite at narrower widths). Fixed
+      by adding `text-align: left` to both `.champ` and `.runner`, which
+      makes `text-overflow: ellipsis` truncate consistently from the
+      right only, regardless of viewport width.
+    - **Item 7** ("Ottawa Senators (orig.)" clunky): renamed to "Ottawa
+      Senators (I)" in both `nhl.txt` and `secondary.txt` (bulk
+      find-replace, not touching the current-day "Ottawa Senators" entry)
+      -- brief, reads naturally as "the first Senators" without the
+      awkward parenthetical word.
+    - **Item 8** (NFL scores missing for 1931 and earlier): investigated
+      via Wikipedia's "History of the NFL championship" article --
+      **not a bug**. The NFL had no championship game at all from
+      1920-1932; the champion was simply whoever had the best season
+      record (first-ever playoff game was 1932, 9-0, and that score is
+      already in the data). There is no score to add for 1920-1931
+      because no such game was ever played -- explained this to the user
+      rather than fabricating a number.
+    - **Item 9** (sport emoji in column headers not vertically centered
+      with the header text): the plain emoji glyphs (baseball/football/
+      basketball) sit slightly high relative to the bold Arial header
+      text's baseline, confirmed via zoomed screenshot. Added
+      `position: relative; top: 2px;` to `.sport-icon` (same
+      metrics-compensation trick already used for `.trophy`/
+      `.titlecount` since entry 40). The NHL icon (already a custom SVG,
+      not an emoji) didn't need this and was unaffected.
+    - Also updated `build.ps1`'s `New-ChampNameColor`-adjacent comments to
+      reflect the new 2.0 threshold and the reasoning above, so a future
+      session doesn't see "4.5" or "3.2" in old comments and get confused
+      about which number is actually live.
+    - Ran `.\build.ps1` only, per the PDF-paused standing rule -- did not
+      touch `.\build_pdf.ps1` or `championship_chart.pdf`.
+47. **Follow-up on item 8 from entry 46**: user asked why a "loser" is
+    listed at all for 1920-1931 NFL rows if there was no championship
+    game. Answer: the second team on those rows is accurate data (the
+    actual second-place-by-record team that season), but the word
+    `"def."` ("defeated") printed in front of it was misleading -- nobody
+    defeated anybody in a game those years. Rather than removing the
+    second-place team entirely (which the user first floated, then
+    reconsidered), the fix is just a label swap: `Build-Cell` in
+    `build.ps1` now computes `$defLabel` conditionally -- `"def."` for
+    every row except NFL years before 1932, which get `"2nd place:"`
+    instead (1932 onward keeps `"def."` since that's when the actual
+    first playoff game started). No changes to `nfl.txt` or CSS needed;
+    `"2nd place:"` fits fine in the existing `.def-label` flex slot at the
+    same font-size. Verified via screenshot across the full 1913-1932
+    range: "2nd place:" reads cleanly beside the runner-up pill from 1920
+    through 1931, and 1932's Portsmouth Spartans row (the real first
+    playoff game) correctly still shows "def."
+48. **Second follow-up on the same 1920-1931 NFL rows**: the oval score
+    pill (normally "4-2"-style for MLB/NHL/NBA or "24-14"-style for NFL)
+    was still appearing on these rows even after entry 47's label fix --
+    since there's no game, `$champGames`/`$runnerGames` are blank in
+    `nfl.txt` for those years, so the pill was rendering as a bare,
+    meaningless "-" oval. Added a `$showScore` flag in `Build-Cell`
+    (false only for `$league -eq 'nfl' -and $year -lt 1932`) and wrapped
+    the `.score` span in a conditional `$scoreSpan` variable that's empty
+    for those rows, so the pill is omitted entirely rather than showing a
+    placeholder dash. Every other row/league unaffected. Verified via
+    screenshot across 1913-1932: no score oval on 1920-1931 NFL rows, oval
+    still present everywhere else including 1932 onward.
+49. **Named-team "too dark" font fix**: user listed 13 specific teams
+    whose champion name text still read as too dark despite already
+    clearing `Get-ChampNameColor`'s legibility bar: Texas Rangers,
+    Washington Nationals, Boston Red Sox, San Francisco Giants, St. Louis
+    Cardinals, Philadelphia Phillies, Cincinnati Reds, Baltimore Ravens,
+    Dallas Cowboys, Miami Dolphins, New York Jets, Chicago Cardinals, and
+    Tampa Bay Lightning. This is a pure cosmetic preference, not a
+    legibility failure, so rather than touching the shared contrast
+    algorithm (and risking regressing teams that weren't mentioned), added
+    a small, explicit `$softenTeams` lookup table in `build.ps1` plus a
+    `Soften-TextColor` helper applied only to those named teams after the
+    normal color pipeline runs:
+    - For teams whose secondary is a real hue (the navy/red teams above),
+      nudges HSL lightness up by a flat `+0.16` (keeps hue/saturation, so
+      navy stays recognizably navy, just a lighter shade of it) -- no
+      contrast-ratio floor gating this, unlike every other color function
+      in the project, since this is an explicit "I know it's less
+      contrasty, I want it lighter anyway" request, trusting the
+      always-on black text-stroke outline to carry legibility.
+    - For teams whose secondary is literal black (Ravens, Jets, Chicago
+      Cardinals, Tampa Bay Lightning -- black has no hue/saturation, so a
+      small lightness delta barely moves it, confirmed via screenshot that
+      `+0.16` on black was still nearly unreadable against dark
+      backgrounds like the Jets' dark green), uses a fixed mid-gray
+      `#767676` instead of the delta math.
+    - Verified every one of the 13 teams individually via zoomed
+      screenshot crops of the real rebuilt `championship_chart.html`
+      (not an isolated snippet) -- Red Sox/Cardinals/Rangers/Nationals/
+      Phillies/Cowboys/Dolphins all read as clearly lighter versions of
+      their own hue, Giants reads as a lighter warm tan, and the four
+      black-secondary teams (Ravens/Jets/Cardinals/Lightning) all read as
+      a clean, consistent light gray.
+50. Removed the light white "double-ring" halo (`box-shadow: 0 0 0 2px
+    rgba(255,255,255,0.55)`, added in entry 46's item 1 fix) from around
+    the runner-up pill, per request -- `.runner` now just has its plain
+    solid border (both base and `@media print` rules), no outer glow.
+51. **Real legibility fix for 12 named teams** (distinct from entry 49's
+    purely cosmetic "make it lighter" request -- this time the user
+    explicitly framed it as a contrast/readability problem): Texas
+    Rangers, Washington Nationals, San Francisco Giants, Florida Marlins,
+    Cincinnati Reds, Tampa Bay Buccaneers, New York Jets, Chicago
+    Cardinals, Colorado Avalanche, Tampa Bay Lightning, Dallas Stars,
+    Rochester Royals.
+    - **Root cause**: entry 49's `$softenTeams` mechanism applied a flat,
+      no-floor `+0.16` HSL lightness bump with zero regard for the
+      resulting contrast ratio. For teams whose color was already
+      borderline (not comfortably passing), that cosmetic bump pushed
+      them from "marginal but legible" to genuinely illegible -- e.g.
+      Texas Rangers went from ratio ~2.07 to ~1.15. Measured actual
+      on-screen ratios for all 12 flagged teams confirmed several were
+      well under 2.0, i.e. a real problem, not just a preference.
+      Overlap with entry 49: Texas Rangers, Washington Nationals, San
+      Francisco Giants, Cincinnati Reds, New York Jets, Chicago
+      Cardinals, and Tampa Bay Lightning were *removed* from
+      `$softenTeams` entirely (their cosmetic lighten was the regression);
+      `$softenTeams` now only contains the 6 teams whose issue genuinely
+      was just preference and didn't regress: Boston Red Sox, St. Louis
+      Cardinals, Philadelphia Phillies, Baltimore Ravens, Dallas Cowboys,
+      Miami Dolphins.
+    - **Fix**: added a new `$highContrastTeams` lookup (11 of the 12 --
+      see Giants exception below) that forces `Get-ChampNameColor`'s own
+      minimum-ratio parameter up to **4.0** (from the site-wide 2.0)
+      specifically for these teams, letting its existing outward
+      lightness-search algorithm do its job properly -- i.e. find the
+      *smallest* color change that clears a comfortable bar, rather than
+      leaving a marginal color untouched (the 2.0 floor) or blindly
+      lightening past it (entry 49's bug). Measured results: Texas
+      Rangers `#003278`&rarr;`#B5D4FF` (ratio 4.14), Florida Marlins
+      `#EF3340`&rarr;`#760911` (ratio 4.02, *darker* direction won here
+      since the Marlins' background is a light cyan -- confirms the
+      algorithm correctly picks whichever direction is the smaller
+      change, not always "lighter"), Cincinnati Reds/New York Jets/
+      Chicago Cardinals/Tampa Bay Lightning (all literal black
+      secondaries) all converge on a light gray in the ~`#8A8A8A`-
+      `#D1D1D1` range depending on how dark their background is.
+    - **San Francisco Giants special case**: this pairing (near-black
+      warm secondary `#27251F` on vivid orange `#FD5A1E`) already has a
+      *good* contrast ratio by the numbers (~4.86) -- raising the bar
+      further does nothing, and entry 49's cosmetic lighten pass
+      (`#666051`, ratio only 1.98) was actively worse. Tested lightening
+      across the *entire* lightness range by hand: contrast ratio
+      actually **drops** the moment you lighten at all (down to ~1.0-1.5
+      through a "muddy tan" zone) and only recovers above ~L=0.9, by
+      which point it no longer reads as the team's color at all. Built a
+      5-swatch visual comparison (literal/previous-soften/black/white/
+      navy) against the real Giants orange and confirmed **the literal,
+      completely unmodified secondary color reads best of all of
+      them** -- so Giants is special-cased in `Build-Cell` to just use
+      `$champSecondary` directly, bypassing both `Get-ChampNameColor` and
+      `$softenTeams` entirely. (This is the one case all session where
+      "leave it alone" was the correct fix, discovered only by testing
+      swatches side by side rather than trusting the contrast-ratio
+      formula in isolation -- a reminder that WCAG-style ratio doesn't
+      always track perceived legibility, especially warm-on-warm pairs.)
+    - Verified all 12 teams individually via zoomed screenshots of the
+      real rebuilt `championship_chart.html` (Texas Rangers, Washington
+      Nationals, Florida Marlins, Cincinnati Reds x3 different years,
+      Tampa Bay Buccaneers, New York Jets, Colorado Avalanche, Tampa Bay
+      Lightning x3, Dallas Stars, Rochester Royals, and San Francisco
+      Giants reverting cleanly to its original dark color) -- all read
+      clearly now; Chicago Cardinals (NFL) confirmed via direct
+      calculation (`#B8B8B8`, ratio 4.03) consistent with the other
+      literal-black-secondary teams since no NFL-column row for that
+      team happened to land in a convenient screenshot crop.
+
+

@@ -115,6 +115,116 @@ function Test-IsGoldish($hex) {
     return ($h -ge 10 -and $h -le 65 -and $s -ge 0.35 -and $l -ge 0.38 -and $l -le 0.85)
 }
 
+# Computes the champion name's text color from the team's own secondary
+# color, balancing two competing goals that caused repeated back-and-forth
+# in earlier sessions (see changelog): keep the real team color recognizable
+# (don't wash a saturated red out to pastel pink just to hit a strict WCAG
+# ratio), while still avoiding literal pure-black text and giving genuinely
+# too-dark "already passing" colors (e.g. a black secondary on an orange
+# background) a small lift so they don't read as flat black.
+#
+# minRatio was lowered from the original 4.5 (strict WCAG AA) down to 2.0
+# after user feedback that several real team pairs (Chiefs gold/red,
+# Patriots red/navy, Pistons red/blue, Cubs red/navy) were being pushed
+# into pale pastel pink/white by the stricter bar. A side-by-side test
+# confirmed the literal, unadjusted team color with just the existing
+# black text-stroke outline reads perfectly fine even at a raw contrast
+# ratio as low as ~1.4 -- the stroke is doing the legibility work, not
+# the fill color's contrast against the background. This project is a
+# cosmetic chart with that stroke always present, not a WCAG-compliance
+# tool, so trading contrast-ratio purity for authentic team color is the
+# right call here. 2.0 is kept as a last-resort floor only for the rare
+# pairs where the literal color is both low-contrast AND visually
+# ambiguous (e.g. near-identical secondary/background tones).
+function Get-ChampNameColor($secHex, $bgHex, $minRatio) {
+    $rawRatio = Get-ContrastRatio $secHex $bgHex
+    if ($rawRatio -ge $minRatio) {
+        # Secondary color already reads fine as-is -- keep it untouched,
+        # UNLESS it's quite dark (common for black/near-black secondaries
+        # on a bright background), in which case nudge it a bit lighter
+        # purely for a softer look, not because it fails legibility.
+        $final = $secHex
+        if ((Get-RelLuminance $final) -lt 0.09) {
+            $rgb = Hex-ToRgb $final
+            $hsl = Rgb-ToHsl $rgb[0] $rgb[1] $rgb[2]
+            $lighter = Set-Lightness $final ($hsl[2] + 0.22)
+            if ((Get-ContrastRatio $lighter $bgHex) -ge 1.6) { $final = $lighter }
+        }
+        return $final
+    }
+    $final = Get-LegibleColor $secHex $bgHex $minRatio
+    if ((Get-RelLuminance $final) -lt 0.03) { $final = Set-Lightness $final 0.20 }
+    if ((Get-ContrastRatio $final $bgHex) -lt 2.0) {
+        if ((Get-ContrastRatio '#FFFFFF' $bgHex) -ge (Get-ContrastRatio '#2b2b2b' $bgHex)) {
+            $final = '#FFFFFF'
+        } else {
+            $final = '#2b2b2b'
+        }
+    }
+    return $final
+}
+
+# Explicit per-team lightness nudge, used for a named list of teams the
+# user flagged as reading too dark even though they technically clear the
+# legibility bar in Get-ChampNameColor above. Unlike that function, this
+# doesn't try to preserve a minimum contrast ratio -- it's a pure cosmetic
+# request, trusting the always-on black text-stroke outline to keep the
+# name readable even as the fill color itself gets noticeably lighter.
+# Keeps hue/saturation, just raises HSL lightness by a fixed amount
+# (capped so it never blows out to near-white). A handful of these teams'
+# computed color is literal black (no hue/saturation to preserve, e.g. the
+# Ravens/Jets/Cardinals/Lightning's black secondary) -- a small lightness
+# delta barely moves black, so those get a fixed mid-gray instead.
+function Soften-TextColor($hex, $delta) {
+    if ($hex -eq '#000000') { return '#767676' }
+    $rgb = Hex-ToRgb $hex
+    $hsl = Rgb-ToHsl $rgb[0] $rgb[1] $rgb[2]
+    $newL = [Math]::Min(0.72, $hsl[2] + $delta)
+    return Set-Lightness $hex $newL
+}
+
+# Teams named in direct user feedback as having too-dark champion name
+# text, regardless of what the contrast algorithm above computed for them.
+# NOTE: this list used to also include Texas Rangers, Washington Nationals,
+# San Francisco Giants, Cincinnati Reds, New York Jets, Chicago Cardinals,
+# and Tampa Bay Lightning -- removed after a later round of feedback that
+# this flat, no-floor cosmetic lighten had pushed several of those teams'
+# *already marginal* contrast down even further (e.g. Texas Rangers went
+# from a borderline-but-legible ratio ~2.07 to an actually-illegible
+# ~1.15). Those teams now go through `$highContrastTeams` below instead,
+# which enforces a real contrast floor rather than a blind lightness bump.
+$softenTeams = @{
+    'Boston Red Sox' = $true
+    'St. Louis Cardinals' = $true
+    'Philadelphia Phillies' = $true
+    'Baltimore Ravens' = $true
+    'Dallas Cowboys' = $true
+    'Miami Dolphins' = $true
+}
+
+# Teams named in direct user feedback as genuinely hard to read -- unlike
+# `$softenTeams` above (a pure cosmetic preference), this is treated as a
+# real legibility bug: force a much higher minimum contrast ratio (4.0
+# instead of the site-wide 2.0 floor) specifically for these teams, so
+# `Get-ChampNameColor`'s own outward lightness search does the work of
+# finding the smallest change that actually clears a comfortable bar,
+# instead of leaving a borderline color untouched or (worse) lightening it
+# with no regard for the resulting ratio.
+$highContrastTeams = @{
+    'Texas Rangers' = $true
+    'Washington Nationals' = $true
+    'Florida Marlins' = $true
+    'Cincinnati Reds' = $true
+    'Tampa Bay Buccaneers' = $true
+    'New York Jets' = $true
+    'Chicago Cardinals' = $true
+    'Colorado Avalanche' = $true
+    'Tampa Bay Lightning' = $true
+    'Dallas Stars' = $true
+    'Rochester Royals' = $true
+}
+
+
 # Ensures $textHex is legible against $bgHex. If contrast is already
 # decent, returns the original color unchanged (preserves team color).
 # Otherwise nudges the text color's lightness (same hue/saturation) toward
@@ -314,31 +424,28 @@ function Build-Cell($parts, $league, $secondary, $year, $cumulative) {
     $champSecondary = Get-Secondary $champ $league $secondary
     $runnerSecondary = Get-Secondary $runner $league $secondary
     $champCount = $cumulative["$league|$year"]
-    $champNameColor = Get-LegibleColor $champSecondary $champColor 4.5
-    # Never render the winner's name in literal black -- the outline
-    # (below) is always true black and must stay the single darkest
-    # element on the card. If contrast tuning pushed the name color down
-    # into near-black territory, lighten it slightly (preserving its hue)
-    # so it stays visually distinct from the outline instead of the two
-    # merging into one indistinct dark blob.
-    if ((Get-RelLuminance $champNameColor) -lt 0.03) {
-        $champNameColor = Set-Lightness $champNameColor 0.20
-    }
-    # Safety net: for a handful of team color pairs, no lightness along the
-    # secondary color's own hue clears the contrast bar against that
-    # team's own primary color at all (e.g. Oklahoma City Thunder's orange
-    # secondary against their own medium blue primary -- neither a
-    # lighter nor darker tint of that orange ever gets there). The
-    # lighten-if-black step above can then leave a color that still reads
-    # as muddy/too-dark. If the final color is still clearly
-    # under-contrasted, drop the hue-preservation attempt entirely and
-    # fall back to a plain, guaranteed-legible neutral (never literal
-    # black, per the rule above).
-    if ((Get-ContrastRatio $champNameColor $champColor) -lt 4.0) {
-        if ((Get-ContrastRatio '#FFFFFF' $champColor) -ge (Get-ContrastRatio '#2b2b2b' $champColor)) {
-            $champNameColor = '#FFFFFF'
-        } else {
-            $champNameColor = '#2b2b2b'
+    # San Francisco Giants is a special case: their secondary is a
+    # near-black warm color (#27251F) against a vivid orange background.
+    # By the numbers that pairing already has good contrast (~4.9) and
+    # pushing it lighter in either direction (tested extensively) only
+    # makes it *worse* -- lighter washes through a low-contrast "muddy
+    # tan" zone before ever regaining ratio, and only recovers past
+    # literal white, which looks wrong for the team. A direct visual
+    # comparison confirmed the literal, unmodified secondary color reads
+    # best here, so it's left alone entirely rather than run through
+    # either adjustment path below.
+    if ($champ -eq 'San Francisco Giants') {
+        $champNameColor = $champSecondary
+    } elseif ($highContrastTeams.ContainsKey($champ)) {
+        $champNameColor = Get-ChampNameColor $champSecondary $champColor 4.0
+    } else {
+        $champNameColor = Get-ChampNameColor $champSecondary $champColor 2.0
+        if ($softenTeams.ContainsKey($champ)) {
+            if ($champSecondary -eq '#000000') {
+                $champNameColor = '#767676'
+            } else {
+                $champNameColor = Soften-TextColor $champNameColor 0.16
+            }
         }
     }
     # Outline is always solid black and always just a thin stroke -- no
@@ -358,6 +465,13 @@ function Build-Cell($parts, $league, $secondary, $year, $cumulative) {
     }
 
     $scoreLabel = "$champGames-$runnerGames"
+    $showScore = $true
+    if ($league -eq 'nfl' -and $year -lt 1932) {
+        # No championship game was played, so there's no game score to
+        # show -- the "4-2"/"24-14"-style pill would just render as a
+        # bare "-" placeholder, which doesn't mean anything here.
+        $showScore = $false
+    }
     if ($champFg -eq '#fff') {
         $scorePillBg = 'rgba(255,255,255,0.22)'
         $scorePillBorder = 'rgba(255,255,255,0.4)'
@@ -372,7 +486,14 @@ function Build-Cell($parts, $league, $secondary, $year, $cumulative) {
     }
 
     if ($champIsLightBg) {
-        $trophyFilter = 'filter:drop-shadow(0 0 1.5px rgba(0,0,0,0.9)) drop-shadow(0 0 1.5px rgba(0,0,0,0.9))'
+        # A blurred drop-shadow filter on a tiny color-emoji glyph doesn't
+        # render as a clean outline at this size -- it smears into an
+        # unrecognizable blob (confirmed via screenshot). A crisp,
+        # zero-blur, multi-directional text-shadow (the classic hard-edge
+        # "outline" trick) traces the glyph's actual alpha shape instead,
+        # so the trophy still reads as a trophy, just with a thin dark
+        # edge for contrast against a gold/orange background.
+        $trophyFilter = 'text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000'
         $countColor = '#1a1a1a'
     } else {
         $trophyFilter = ''
@@ -381,9 +502,23 @@ function Build-Cell($parts, $league, $secondary, $year, $cumulative) {
 
     $html = "<td style=`"background:$champColor;color:$champFg`">"
 
+    # 1920-1931 NFL seasons had no championship game -- the "runner-up"
+    # there is just the second-place team by season record, not a team
+    # that was actually defeated in a game, so "def." is factually wrong
+    # for those rows specifically (every other row, including 1932
+    # onward, is a real game/series result).
+    $defLabel = 'def.'
+    if ($league -eq 'nfl' -and $year -lt 1932) {
+        $defLabel = '2nd place:'
+    }
+
     $html += $sbLabel
     $html += "<div class=`"result-line`"><span class=`"champ`" style=`"color:$champNameColor;$champOutline`">$champ</span><span class=`"recline-champ`">$champLine</span><span class=`"trophy`" style=`"$trophyFilter`">&#127942;</span><span class=`"titlecount`" style=`"color:$countColor`">$champCount</span></div>"
-    $html += "<div class=`"result-line`"><span class=`"def-label`">def.</span><span class=`"runner`" style=`"background:$runnerColor;color:$runnerFg;border-color:$runnerSecondary`">$runner</span><span class=`"recline-runner`" style=`"color:$champFg`">$runnerLine</span><span class=`"score`" style=`"color:$champFg;background:$scorePillBg;border-color:$scorePillBorder`">$scoreLabel</span></div>"
+    $scoreSpan = ''
+    if ($showScore) {
+        $scoreSpan = "<span class=`"score`" style=`"color:$champFg;background:$scorePillBg;border-color:$scorePillBorder`">$scoreLabel</span>"
+    }
+    $html += "<div class=`"result-line`"><span class=`"def-label`">$defLabel</span><span class=`"runner`" style=`"background:$runnerColor;color:$runnerFg;border-color:$runnerSecondary`">$runner</span><span class=`"recline-runner`" style=`"color:$champFg`">$runnerLine</span>$scoreSpan</div>"
     $html += '</td>'
     return $html
 }

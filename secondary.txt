@@ -105,7 +105,7 @@ New Jersey Devils|#000000
 New York Islanders|#F47D30
 New York Rangers|#CE1126
 Ottawa Senators|#E31837
-Ottawa Senators (orig.)|#FFD700
+Ottawa Senators (I)|#FFD700
 Philadelphia Flyers|#000000
 Pittsburgh Penguins|#FCB514
 Portland Rosebuds|#B5985A
